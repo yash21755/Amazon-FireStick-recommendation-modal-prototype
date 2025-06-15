@@ -6,15 +6,22 @@ import {
   FaMoon,
   FaSun,
   FaAngleDoubleRight,
-  FaAngleDoubleLeft
+  FaAngleDoubleLeft,
+  FaUsers,
+  FaHistory,
+  FaVideo,
+  FaHome
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SideBarMenu = ({ darkMode, toggleTheme }) => {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => setExpanded(!expanded);
 
   const menuItems = [
+    { icon: <FaHome size={20} />, label: "Home", onClick: () => navigate("/") },
     { icon: <FaUser size={20} />, label: "Profile" },
     { icon: <FaRegClock size={20} />, label: "Sleep Timer" },
     { icon: <FaCog size={20} />, label: "Settings" },
@@ -22,14 +29,18 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
       icon: darkMode ? <FaSun size={20} /> : <FaMoon size={20} />,
       label: "Toggle Theme",
       onClick: toggleTheme
-    }
+    },
+    { icon: <FaUsers size={20} />, label: "My Network", onClick: () => navigate("/my-network") },
+    { icon: <FaHistory size={20} />, label: "Memory Lane", onClick: () => navigate("/memory-lane") },
+    { icon: <FaVideo size={20} />, label: "Watch Along", onClick: () => navigate("/watch-along") }
   ];
 
   return (
     <div
-      className={`h-screen transition-all duration-300 ${
+      className={`h-screen min-h-screen transition-all duration-300 ${
         darkMode ? "bg-[#1e293b] text-white" : "bg-gray-400 text-gray-900"
       } flex flex-col ${expanded ? "w-1/6 min-w-[200px]" : "w-[50px]"}`}
+      style={{ height: "100vh" }}
     >
       {/* Expand/Collapse Button */}
       <div
