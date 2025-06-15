@@ -12,6 +12,8 @@ import {
   DeviceTabletIcon as TvIcon, // Use DeviceTabletIcon as TV icon substitute
   ChevronUpIcon,
   ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   VolumeOffIcon, // Replace SpeakerXMarkIcon with VolumeOffIcon
   RewindIcon,
   FastForwardIcon,
@@ -28,13 +30,13 @@ const Remote = () => {
     <div className="fixed top-0 right-0 h-full w-1/5 bg-gray-800 text-white flex flex-col items-center p-4 space-y-4">
       {/* top: power & Alexa */}
       <div className="flex space-x-4">
-        <button
+        {/* <button
           title="Power"
           onClick={handleClick("power")}
           className="p-2 rounded-full hover:bg-gray-700"
         >
           <SwitchHorizontalIcon className="w-6 h-6" />
-        </button>
+        </button> */}
         <button
           title="Alexa Voice Command"
           onClick={handleClick("alexa")}
@@ -43,47 +45,58 @@ const Remote = () => {
           <MicrophoneIcon className="w-6 h-6" />
         </button>
       </div>
-
       {/* big D‑pad */}
-      <div className="space-y-2">
-        <button
-          title="Up"
-          onClick={handleClick("up")}
-          className="p-2 rounded-full hover:bg-gray-700"
-        >
-          <ChevronUpIcon className="w-6 h-6" />
-        </button>
-        <div className="flex space-x-2">
-          <button
-            title="Left"
-            onClick={handleClick("left")}
-            className="p-2 rounded-full hover:bg-gray-700"
-          >
-            <ArrowLeftIcon className="w-6 h-6" />
-          </button>
-          <button
-            title="Select / OK"
-            onClick={handleClick("select")}
-            className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600"
-          >
-            OK
-          </button>
-          <button
-            title="Right"
-            onClick={handleClick("right")}
-            className="p-2 rounded-full hover:bg-gray-700"
-          >
-            <ChevronUpIcon className="w-6 h-6 rotate-90" />
-          </button>
-        </div>
-        <button
-          title="Down"
-          onClick={handleClick("down")}
-          className="p-2 rounded-full hover:bg-gray-700"
-        >
-          <ChevronDownIcon className="w-6 h-6" />
-        </button>
-      </div>
+     <div className="flex items-center justify-center">
+  {/* Black ring wrapper */}
+  <div className="relative w-40 h-40 rounded-full bg-gray-900 flex items-center justify-center">
+    
+    {/* Up button */}
+    <button
+      title="Up"
+      onClick={handleClick("up")}
+      className="absolute top-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full  "
+    >
+      <ChevronUpIcon className="w-6 h-6 text-white" />
+    </button>
+
+    {/* Left button */}
+    <button
+      title="Left"
+      onClick={handleClick("left")}
+      className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full  "
+    >
+      <ChevronLeftIcon className="w-6 h-6 text-white" />
+    </button>
+
+    {/* Center select/OK button */}
+    <button
+      title="Select / OK"
+      onClick={handleClick("select")}
+      className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 text-white"
+    >
+      OK
+    </button>
+
+    {/* Right button */}
+    <button
+      title="Right"
+      onClick={handleClick("right")}
+      className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full "
+    >
+      <ChevronRightIcon className="w-6 h-6 text-white" />
+    </button>
+
+    {/* Down button */}
+    <button
+      title="Down"
+      onClick={handleClick("down")}
+      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full "
+    >
+      <ChevronDownIcon className="w-6 h-6 text-white" />
+    </button>
+  </div>
+</div>
+
 
       {/* nav row */}
       <div className="grid grid-cols-3 gap-2">
