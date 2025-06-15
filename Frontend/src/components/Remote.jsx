@@ -28,15 +28,8 @@ const Remote = () => {
 
   return (
     <div className="fixed top-0 right-0 h-full w-1/5 bg-gray-800 text-white flex flex-col items-center p-4 space-y-4">
-      {/* top: power & Alexa */}
+      {/* top: Alexa */}
       <div className="flex space-x-4">
-        {/* <button
-          title="Power"
-          onClick={handleClick("power")}
-          className="p-2 rounded-full hover:bg-gray-700"
-        >
-          <SwitchHorizontalIcon className="w-6 h-6" />
-        </button> */}
         <button
           title="Alexa Voice Command"
           onClick={handleClick("alexa")}
@@ -46,7 +39,7 @@ const Remote = () => {
         </button>
       </div>
       {/* big D‑pad */}
-     <div className="flex items-center justify-center">
+     <div className="flex items-center justify-center m-6">
   {/* Black ring wrapper */}
   <div className="relative w-40 h-40 rounded-full bg-gray-900 flex items-center justify-center">
     
@@ -54,7 +47,7 @@ const Remote = () => {
     <button
       title="Up"
       onClick={handleClick("up")}
-      className="absolute top-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full  "
+      className="absolute top-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full"
     >
       <ChevronUpIcon className="w-6 h-6 text-white" />
     </button>
@@ -63,7 +56,7 @@ const Remote = () => {
     <button
       title="Left"
       onClick={handleClick("left")}
-      className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full  "
+      className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full"
     >
       <ChevronLeftIcon className="w-6 h-6 text-white" />
     </button>
@@ -81,7 +74,7 @@ const Remote = () => {
     <button
       title="Right"
       onClick={handleClick("right")}
-      className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full "
+      className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full"
     >
       <ChevronRightIcon className="w-6 h-6 text-white" />
     </button>
@@ -90,7 +83,7 @@ const Remote = () => {
     <button
       title="Down"
       onClick={handleClick("down")}
-      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full "
+      className="absolute bottom-2 left-1/2 transform -translate-x-1/2 p-2 rounded-full"
     >
       <ChevronDownIcon className="w-6 h-6 text-white" />
     </button>
@@ -103,23 +96,23 @@ const Remote = () => {
         <button
           title="Back"
           onClick={handleClick("back")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <ArrowLeftIcon className="w-5 h-5" />
+          <ArrowLeftIcon className="w-6 h-6" />
         </button>
         <button
           title="Home"
           onClick={handleClick("home")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <HomeIcon className="w-5 h-5" />
+          <HomeIcon className="w-6 h-6" />
         </button>
         <button
           title="Menu"
           onClick={handleClick("menu")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <MenuIcon className="w-5 h-5" />
+          <MenuIcon className="w-6 h-6" />
         </button>
       </div>
 
@@ -128,23 +121,23 @@ const Remote = () => {
         <button
           title="Rewind"
           onClick={handleClick("rewind")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <RewindIcon className="w-5 h-5" />
+          <RewindIcon className="w-6 h-6" />
         </button>
         <button
           title="Play / Pause"
           onClick={handleClick("playpause")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <PlayIcon className="w-5 h-5" />
+          <PlayIcon className="w-6 h-6" />
         </button>
         <button
           title="Fast Forward"
           onClick={handleClick("forward")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <FastForwardIcon className="w-5 h-5" />
+          <FastForwardIcon className="w-6 h-6" />
         </button>
       </div>
 
@@ -153,63 +146,45 @@ const Remote = () => {
         <button
           title="Volume Up"
           onClick={handleClick("vol-up")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <PlusIcon className="w-5 h-5" />
+          <PlusIcon className="w-6 h-6" />
         </button>
         <button
           title="TV Input"
           onClick={handleClick("tv")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <TvIcon className="w-5 h-5" />
+          <TvIcon className="w-6 h-6" />
         </button>
         <button
           title="Channel Up"
           onClick={handleClick("chan-up")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <ChevronUpIcon className="w-5 h-5" />
+          <ChevronUpIcon className="w-6 h-6" />
         </button>
 
         <button
           title="Volume Down"
           onClick={handleClick("vol-down")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <MinusIcon className="w-5 h-5" />
+          <MinusIcon className="w-6 h-6" />
         </button>
         <button
           title="Mute"
           onClick={handleClick("mute")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <VolumeOffIcon className="w-5 h-5" />
+          <VolumeOffIcon className="w-6 h-6" />
         </button>
         <button
           title="Channel Down"
           onClick={handleClick("chan-down")}
-          className="p-2 rounded-full hover:bg-gray-700"
+          className="p-4 rounded-full ml-3 mb-1 bg-gray-900 hover:bg-gray-700"
         >
-          <ChevronDownIcon className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* 1 & 2 */}
-      <div className="grid grid-cols-2 gap-2">
-        <button
-          title="1"
-          onClick={handleClick("1")}
-          className="p-2 rounded-full hover:bg-gray-700"
-        >
-          1
-        </button>
-        <button
-          title="2"
-          onClick={handleClick("2")}
-          className="p-2 rounded-full hover:bg-gray-700"
-        >
-          2
+          <ChevronDownIcon className="w-6 h-6" />
         </button>
       </div>
 
