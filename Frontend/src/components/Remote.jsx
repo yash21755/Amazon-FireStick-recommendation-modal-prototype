@@ -27,7 +27,7 @@ const Remote = () => {
   };
 
   return (
-    <div className="fixed top-0 right-0 h-full w-1/5 bg-gray-800 text-white flex flex-col items-center p-4 space-y-4">
+    <div className="fixed top-0 right-0 h-full w-1/5 bg-gray-800 text-white flex flex-col items-center p-4 space-y-5">
       {/* top: Alexa */}
       <div className="flex space-x-4">
         <button
@@ -39,7 +39,7 @@ const Remote = () => {
         </button>
       </div>
       {/* big D‑pad */}
-     <div className="flex items-center justify-center m-6">
+     <div className="flex items-center justify-center">
   {/* Black ring wrapper */}
   <div className="relative w-40 h-40 rounded-full bg-gray-900 flex items-center justify-center">
     
@@ -189,36 +189,40 @@ const Remote = () => {
       </div>
 
       {/* branded shortcuts */}
-      <div className="grid grid-cols-2 gap-2 w-full">
-        <button
-          title="Prime Video"
-          onClick={handleClick("prime")}
-          className="w-full py-2 rounded hover:bg-gray-700"
-        >
-          Prime Video
-        </button>
-        <button
-          title="Netflix"
-          onClick={handleClick("netflix")}
-          className="w-full py-2 rounded hover:bg-gray-700"
-        >
-          Netflix
-        </button>
-        <button
-          title="Disney+"
-          onClick={handleClick("disney")}
-          className="w-full py-2 rounded hover:bg-gray-700"
-        >
-          Disney
-        </button>
-        <button
-          title="Hulu"
-          onClick={handleClick("hulu")}
-          className="w-full py-2 rounded hover:bg-gray-700"
-        >
-          Hulu
-        </button>
-      </div>
+<div className="grid grid-cols-2 gap-4 w-full">
+  <button
+    title="Prime Video"
+    onClick={handleClick("prime")}
+    className="w-full py-2 rounded text-white font-semibold bg-gradient-to-r from-[#00a8e1] via-[#0078b6] to-[#002d5c] hover:backdrop-blur-sm hover:bg-white/10 transition"
+  >
+    Prime Video
+  </button>
+
+  <button
+    title="Netflix"
+    onClick={handleClick("netflix")}
+    className="w-full py-2 rounded text-white font-semibold bg-gradient-to-r from-[#e50914] via-[#b00610] to-[#111111] hover:backdrop-blur-sm hover:bg-white/10 transition"
+  >
+    Netflix
+  </button>
+
+  <button
+    title="Disney+"
+    onClick={handleClick("disney")}
+    className="w-full py-2 rounded text-white font-semibold bg-gradient-to-r from-[#113ccf] via-[#1e66f9] to-[#00e1ff] hover:backdrop-blur-sm hover:bg-white/10 transition"
+  >
+    Disney+
+  </button>
+
+  <button
+    title="Hulu"
+    onClick={handleClick("hulu")}
+    className="w-full py-2 rounded text-white font-semibold bg-gradient-to-r from-[#1ce783] via-[#0fb872] to-[#0a5640] hover:backdrop-blur-sm hover:bg-white/10 transition"
+  >
+    Hulu
+  </button>
+</div>
+
 
       {/* Fire TV label */}
       <div className="mt-auto text-gray-500">fire tv</div>
