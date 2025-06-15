@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Applications from "./Applications";
 import Games from "./Games";
-import { FaSearch, FaHome } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const BottomSection = ({ darkMode }) => {
   const [activeTab, setActiveTab] = useState("applications");
+  const [searchActive, setSearchActive] = useState(false);
   const navigate = useNavigate();
 
   const isFullScreen =
@@ -23,23 +24,38 @@ const BottomSection = ({ darkMode }) => {
   };
 
   return (
-    <div className={`w-full p-8 flex flex-col gap-4 transition-colors duration-300 ${darkMode ? "bg-[#23272f] text-white" : "bg-gray-200 text-gray-900"}`}>
-      {/* Navbar (only visible for apps/games) */}
+    <div className={`w-full px-8 py-4 flex flex-col gap-1 transition-colors duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-200 text-gray-900"}`}>
+      {/* Navbar for apps/games */}
       {!isFullScreen && (
-        <div className="flex items-center justify-between px-6 py-3 border-b border-gray-700 bg-gray-800">
+        <div className="flex items-center justify-between px-12 py-2 border-b border-gray-700 bg-gray-800">
           {/* Left: Tabs */}
-          <div className="flex space-x-6 text-sm font-medium">
-            <button onClick={() => setActiveTab("applications")}>Applications</button>
-            <button onClick={() => setActiveTab("games")}>Games</button>
+          <div className="flex space-x-6 text-m font-medium">
+            <button
+              onClick={() => setActiveTab("applications")}
+              className={activeTab === "applications" ? "text-blue-500" : ""}
+            >
+              Applications
+            </button>
+            <button
+              onClick={() => setActiveTab("games")}
+              className={activeTab === "games" ? "text-blue-500" : ""}
+            >
+              Games
+            </button>
           </div>
 
           {/* Right: Search */}
-          <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded">
+          <div
+            className={`flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded transition-all duration-200 border ${searchActive ? "border-blue-500" : "border-transparent"}`}
+            style={{ width: "24rem" }} // fixed width, does not change on focus
+          >
             <FaSearch size={14} />
             <input
               type="text"
               placeholder="Search..."
-              className="bg-transparent outline-none text-sm placeholder-gray-300"
+              className="bg-transparent outline-none text-sm placeholder-gray-300 w-full"
+              onFocus={() => setSearchActive(true)}
+              onBlur={() => setSearchActive(false)}
             />
           </div>
         </div>

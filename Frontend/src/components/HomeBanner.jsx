@@ -37,7 +37,7 @@ const HomeBanner = () => {
   }, [current, isHovered]);
 
   return (
-    <div className="relative w-full h-[45vh] overflow-hidden font-sans">
+    <div className="relative w-full h-[55vh] overflow-hidden font-sans">
       {/* Search bar
       <div className="fixed top-4 right-6 z-50 backdrop-blur-md bg-black/80 p-2 rounded-lg">
         <input
