@@ -7,6 +7,11 @@ import MyNetworkPage from "./pages/MyNetworkPage";
 import MemoryLanePage from "./pages/MemoryLanePage";
 import WatchAlongPage from "./pages/WatchAlongPage";
 import Netflix from "./pages/Netflix";
+import PrimeVideo from "./pages/PrimeVideo";
+import Disney from "./pages/Disney";
+import Hulu from "./pages/Hulu";
+import YouTube from "./pages/YouTube";
+import YouTubeMusic from "./pages/YouTubeMusic";
 
 const App = () => {
     // Theme logic at the top level
@@ -39,6 +44,11 @@ const App = () => {
                         <Route path="/memory-lane" element={<MemoryLanePage darkMode={darkMode} />} />
                         <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
                         <Route path="/netflix" element={<Netflix />} />
+                        <Route path="/prime-video" element={<PrimeVideo />} />
+                        <Route path="/disney" element={<Disney />} />
+                        <Route path="/hulu" element={<Hulu />} />
+                        <Route path="/youtube" element={<YouTube />} />
+                        <Route path="/youtube-music" element={<YouTubeMusic />} />
                     </Routes>
                 </div>
             </div>

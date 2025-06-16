@@ -21,6 +21,22 @@ const VoiceAssistant = ({ darkMode, toggleTheme }) => {
     else if (cmd.includes("network")) navigate("/my-network");
     else if (cmd.includes("memory")) navigate("/memory-lane");
     else if (cmd.includes("watch")) navigate("/watch-along");
+    else if (cmd.includes("netflix")) navigate("/netflix");
+    else if (
+      cmd.includes("prime") ||
+      cmd.includes("prime video") ||
+      cmd.includes("open prime")
+    ) navigate("/prime-video");
+    else if (cmd.includes("disney")) navigate("/disney");
+    else if (cmd.includes("hulu")) navigate("/hulu");
+    else if (
+      cmd.includes("youtube music") ||
+      (cmd.includes("youtube") && cmd.includes("music"))
+    ) navigate("/youtube-music");
+    else if (
+      (cmd.includes("youtube") && !cmd.includes("music")) ||
+      cmd.includes("open youtube")
+    ) navigate("/youtube");
     else alert("Command not recognized: " + command);
   };
 

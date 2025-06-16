@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const apps = [
-  { name: "Prime Video", logo: "/logos/prime.webp" },
+  { name: "Prime Video", logo: "/logos/prime.webp", route: "/prime-video" },
   { name: "Netflix", logo: "/logos/netflix.png", route: "/netflix" },
-  { name: "Disney+", logo: "/logos/disney.jpg" },
-  { name: "Hulu", logo: "/logos/hulu.svg" },
-  { name: "YouTube", logo: "/logos/yt.jpg" },
-  { name: "YouTube Music", logo: "/logos/ytm.jpg" },
+  { name: "Disney+", logo: "/logos/disney.jpg", route: "/disney" },
+  { name: "Hulu", logo: "/logos/hulu.svg", route: "/hulu" },
+  { name: "YouTube", logo: "/logos/yt.jpg", route: "/youtube" },
+  { name: "YouTube Music", logo: "/logos/ytm.jpg", route: "/youtube-music" },
 ];
 
 const Applications = () => {
