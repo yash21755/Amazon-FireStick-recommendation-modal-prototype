@@ -27,7 +27,7 @@ const MemoryLanePage = ({ darkMode }) => {
 
   return (
     <div className={`w-full h-full p-6 overflow-y-auto ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}>
-      <h1 className="text-3xl text-blue-500 font-bold mb-6">Memory Lane</h1>
+      <h1 className="text-3xl text font-bold mb-6">Memory Lane</h1>
 
       {memories.map((item) => (
         <div key={item.id} className="flex rounded-lg shadow-md mb-6 bg-white dark:bg-gray-800 overflow-hidden">
