@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add your custom styles here, if any */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
