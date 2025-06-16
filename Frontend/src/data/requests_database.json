@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Olivia Green",
+    "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+    "mutualFriends": 3
+  },
+  {
+    "id": 2,
+    "name": "James Taylor",
+    "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+    "mutualFriends": 5
+  },
+  {
+    "id": 3,
+    "name": "Chloe Martin",
+    "avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+    "mutualFriends": 2
+  },
+  {
+    "id": 4,
+    "name": "Ethan Lee",
+    "avatar": "https://randomuser.me/api/portraits/men/16.jpg",
+    "mutualFriends": 4
+  },
+  {
+    "id": 5,
+    "name": "Grace Harris",
+    "avatar": "https://randomuser.me/api/portraits/women/17.jpg",
+    "mutualFriends": 1
+  },
+  {
+    "id": 6,
+    "name": "Benjamin Scott",
+    "avatar": "https://randomuser.me/api/portraits/men/18.jpg",
+    "mutualFriends": 6
+  },
+  {
+    "id": 7,
+    "name": "Sophia Turner",
+    "avatar": "https://randomuser.me/api/portraits/women/19.jpg",
+    "mutualFriends": 2
+  },
+  {
+    "id": 8,
+    "name": "Lucas Walker",
+    "avatar": "https://randomuser.me/api/portraits/men/20.jpg",
+    "mutualFriends": 3
+  },
+  {
+    "id": 9,
+    "name": "Mia Robinson",
+    "avatar": "https://randomuser.me/api/portraits/women/21.jpg",
+    "mutualFriends": 4
+  }
+]

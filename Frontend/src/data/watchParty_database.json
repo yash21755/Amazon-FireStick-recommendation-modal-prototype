@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Weekend Bingers",
+    "image": "https://image.tmdb.org/t/p/w300/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "nextParty": "2025-06-22T20:00:00"
+  },
+  {
+    "id": 2,
+    "name": "Marvel Mania",
+    "image": "https://image.tmdb.org/t/p/w300/7sf9CgJz30aXDvrg7DYYUQ2U91T.jpg",
+    "nextParty": "2025-06-24T21:30:00"
+  },
+  {
+    "id": 3,
+    "name": "Horror Night Owls",
+    "image": "https://image.tmdb.org/t/p/w300/7sf9CgJz30aXDvrg7DYYUQ2U91T.jpg",
+    "nextParty": "2025-06-25T23:00:00"
+  },
+  {
+    "id": 4,
+    "name": "Prime Time Crew",
+    "image": "https://image.tmdb.org/t/p/w300/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "nextParty": "2025-06-20T19:00:00"
+  },
+  {
+    "id": 5,
+    "name": "K-Drama Addicts",
+    "image": "https://image.tmdb.org/t/p/w300/7sf9CgJz30aXDvrg7DYYUQ2U91T.jpg",
+    "nextParty": "2025-06-21T22:30:00"
+  },
+  {
+    "id": 6,
+    "name": "Retro Movie Club",
+    "image": "https://image.tmdb.org/t/p/w300/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "nextParty": "2025-06-23T18:45:00"
+  }
+]

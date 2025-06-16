@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "poster": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SL1500_.jpg",
+    "recommendedBy": "Alice",
+    "length": "2h 28min",
+    "imdb": 8.8,
+    "platform": "Netflix",
+    "platformLogo": "/logos/netflix.png",
+    "platformLink": "https://www.netflix.com/in/title/70131314"
+  },
+  {
+    "id": 2,
+    "title": "The Boys",
+    "poster": "https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg",
+    "recommendedBy": "Bob",
+    "length": "3 Seasons",
+    "imdb": 8.7,
+    "platform": "Prime Video",
+    "platformLogo": "/logos/prime.webp",
+    "platformLink": "https://www.primevideo.com/detail/The-Boys"
+  },
+  {
+    "id": 3,
+    "title": "Loki",
+    "poster": "https://image.tmdb.org/t/p/w500/voHUmluYmKyleFkTu3lOXQG702u.jpg",
+    "recommendedBy": "Charlie",
+    "length": "2 Seasons",
+    "imdb": 8.2,
+    "platform": "Disney+",
+    "platformLogo": "/logos/disney.jpg",
+    "platformLink": "https://www.disneyplus.com/series/loki"
+  }
+]
