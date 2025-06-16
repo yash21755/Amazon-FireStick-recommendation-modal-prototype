@@ -6,8 +6,8 @@ const apps = [
   { name: "Netflix", logo: "/logos/netflix.png", route: "/netflix" },
   { name: "Disney+", logo: "/logos/disney.jpg", route: "/disney" },
   { name: "Hulu", logo: "/logos/hulu.svg", route: "/hulu" },
-  { name: "YouTube", logo: "/logos/yt.jpg", route: "/youtube" },
-  { name: "YouTube Music", logo: "/logos/ytm.jpg", route: "/youtube-music" },
+  { name: "YouTube", logo: "/logos/yt.jpg", external: "https://www.youtube.com" },
+  { name: "YouTube Music", logo: "/logos/ytm.jpg", external: "https://music.youtube.com" },
 ];
 
 const Applications = () => {
@@ -40,7 +40,11 @@ const Applications = () => {
           <div
             key={idx}
             className="min-w-[360px] h-[180px] rounded-2xl overflow-hidden relative group shrink-0 cursor-pointer"
-            onClick={() => app.route && navigate(app.route)}
+            onClick={() =>
+              app.external
+                ? window.open(app.external, "_blank", "noopener,noreferrer")
+                : app.route && navigate(app.route)
+            }
             tabIndex={0}
             role="button"
             aria-label={app.name}
