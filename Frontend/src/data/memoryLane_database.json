@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "date": "2025-06-10",
+    "people": [
+      { "name": "You", "avatar": "https://randomuser.me/api/portraits/men/1.jpg" },
+      { "name": "Alice", "avatar": "https://randomuser.me/api/portraits/women/2.jpg" },
+      { "name": "Bob", "avatar": "https://randomuser.me/api/portraits/men/3.jpg" },
+      { "name": "Carol", "avatar": "https://randomuser.me/api/portraits/women/4.jpg" },
+      { "name": "David", "avatar": "https://randomuser.me/api/portraits/men/5.jpg" },
+      { "name": "Eve", "avatar": "https://randomuser.me/api/portraits/women/6.jpg" },
+      { "name": "Frank", "avatar": "https://randomuser.me/api/portraits/men/7.jpg" },
+      { "name": "Grace", "avatar": "https://randomuser.me/api/portraits/women/8.jpg" },
+      { "name": "Heidi", "avatar": "https://randomuser.me/api/portraits/women/9.jpg" }
+    ],
+    "duration": 148,
+    "rating": 8.8,
+    "platforms": [
+      { "name": "Netflix" },
+      { "name": "Prime Video" }
+    ],
+    "poster": "./images/inceptionvert.jpg"
+  },
+  {
+    "id": 2,
+    "title": "NBA Play In Tournament",
+    "date": "2025-06-08",
+    "people": [
+      { "name": "You", "avatar": "https://randomuser.me/api/portraits/men/10.jpg" },
+      { "name": "Liam", "avatar": "https://randomuser.me/api/portraits/men/11.jpg" },
+      { "name": "Noah", "avatar": "https://randomuser.me/api/portraits/men/12.jpg" },
+      { "name": "Olivia", "avatar": "https://randomuser.me/api/portraits/women/13.jpg" }
+    ],
+    "duration": 135,
+    "rating": 9.2,
+    "platforms": [
+      { "name": "Hulu" }
+    ],
+    "poster": "./images/nba.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Mandalorian",
+    "date": "2025-06-04",
+    "people": [
+      { "name": "You", "avatar": "https://randomuser.me/api/portraits/men/14.jpg" },
+      { "name": "Mando", "avatar": "https://randomuser.me/api/portraits/men/15.jpg" },
+      { "name": "Grogu", "avatar": "https://randomuser.me/api/portraits/men/16.jpg" }
+    ],
+    "duration": 38,
+    "rating": 8.7,
+    "platforms": [
+      { "name": "Disney+" }
+    ],
+    "poster": "./images/mandalorian.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Lion King",
+    "date": "2025-05-30",
+    "people": [
+      { "name": "You", "avatar": "https://randomuser.me/api/portraits/men/17.jpg" },
+      { "name": "Simba", "avatar": "https://randomuser.me/api/portraits/men/18.jpg" },
+      { "name": "Nala", "avatar": "https://randomuser.me/api/portraits/women/19.jpg" },
+      { "name": "Mufasa", "avatar": "https://randomuser.me/api/portraits/men/20.jpg" }
+    ],
+    "duration": 88,
+    "rating": 8.5,
+    "platforms": [
+      { "name": "Disney+" },
+      { "name": "Prime Video" }
+    ],
+    "poster": "./images/lionking.webp"
+  }
+]
