@@ -77,7 +77,7 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
 
   const menuItems = [
     { icon: <FaHome size={20} />, label: "Home", onClick: () => navigate("/") },
-    { icon: <FaUser size={20} />, label: "Profile" },
+    { icon: <FaUser size={20} />, label: "Profile", onClick:() => navigate("/profile") },
     { icon: <FaRegClock size={20} />, label: "Sleep Timer" },
     { icon: <FaCog size={20} />, label: "Settings" },
     {

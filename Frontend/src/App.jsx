@@ -12,6 +12,7 @@ import Disney from "./pages/Disney";
 import Hulu from "./pages/Hulu";
 import YouTube from "./pages/YouTube";
 import YouTubeMusic from "./pages/YouTubeMusic";
+import Profile from "./pages/Profile";
 
 const App = () => {
     // Theme logic at the top level
@@ -33,14 +34,25 @@ const App = () => {
 
     const toggleTheme = () => setDarkMode((prev) => !prev);
 
+    useEffect(() => {
+        // Hide scrollbars and prevent scrolling globally
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+        };
+    }, []);
+
     return (
         <Router>
             <div className={`min-h-screen flex ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}>
                 <SideBarMenu darkMode={darkMode} toggleTheme={toggleTheme} />
-                <div className="flex-1 h-screen overflow-auto">
+                <div className="flex-1 h-screen overflow-auto no-scrollbar">
                     <Routes>
                         <Route path="/" element={<HomePage darkMode={darkMode} toggleTheme={toggleTheme} />} />
                         <Route path="/my-network" element={<MyNetworkPage darkMode={darkMode} />} />
+                        <Route path="/profile" element={<Profile darkMode={darkMode} />} />
                         <Route path="/memory-lane" element={<MemoryLanePage darkMode={darkMode} />} />
                         <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
                         <Route path="/netflix" element={<Netflix />} />
