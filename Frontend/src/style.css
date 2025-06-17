@@ -12,6 +12,15 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+/* Hide scrollbars on all scrollable elements */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
 /* ...existing .no-scrollbar styles... */
 .no-scrollbar {
   -ms-overflow-style: none;
