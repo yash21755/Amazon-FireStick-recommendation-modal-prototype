@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "axios": "^1.10.0",
+    "lamejs": "^1.2.1",
+    "mic-recorder-to-mp3": "^2.2.2",
     "papaparse": "^5.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
