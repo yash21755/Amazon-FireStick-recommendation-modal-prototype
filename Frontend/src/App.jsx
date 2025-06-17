@@ -13,59 +13,73 @@ import Hulu from "./pages/Hulu";
 import YouTube from "./pages/YouTube";
 import YouTubeMusic from "./pages/YouTubeMusic";
 import Profile from "./pages/Profile";
+import SleepTime from "./components/SleepTime";
 
 const App = () => {
-    // Theme logic at the top level
-    const [darkMode, setDarkMode] = useState(() => {
-        const stored = localStorage.getItem("theme");
-        return stored ? stored === "dark" : true;
-    });
+  const [darkMode, setDarkMode] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    return stored ? stored === "dark" : true;
+  });
 
-    useEffect(() => {
-        const root = document.documentElement;
-        if (darkMode) {
-            root.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        } else {
-            root.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-        }
-    }, [darkMode]);
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
-    const toggleTheme = () => setDarkMode((prev) => !prev);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, []);
 
-    useEffect(() => {
-        // Hide scrollbars and prevent scrolling globally
-        document.body.style.overflow = "hidden";
-        document.documentElement.style.overflow = "hidden";
-        return () => {
-            document.body.style.overflow = "";
-            document.documentElement.style.overflow = "";
-        };
-    }, []);
+  const [showSleep, setShowSleep] = useState(false);
 
-    return (
-        <Router>
-            <div className={`min-h-screen flex ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}>
-                <SideBarMenu darkMode={darkMode} toggleTheme={toggleTheme} />
-                <div className="flex-1 h-screen overflow-auto no-scrollbar">
-                    <Routes>
-                        <Route path="/" element={<HomePage darkMode={darkMode} toggleTheme={toggleTheme} />} />
-                        <Route path="/my-network" element={<MyNetworkPage darkMode={darkMode} />} />
-                        <Route path="/profile" element={<Profile darkMode={darkMode} />} />
-                        <Route path="/memory-lane" element={<MemoryLanePage darkMode={darkMode} />} />
-                        <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
-                        <Route path="/netflix" element={<Netflix />} />
-                        <Route path="/prime-video" element={<PrimeVideo />} />
-                        <Route path="/disney" element={<Disney />} />
-                        <Route path="/hulu" element={<Hulu />} />
-                        <Route path="/youtube" element={<YouTube />} />
-                        <Route path="/youtube-music" element={<YouTubeMusic />} />
-                    </Routes>
-                </div>
+  return (
+    <Router>
+      <div className={`min-h-screen flex ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}>
+        <SideBarMenu darkMode={darkMode} toggleTheme={toggleTheme} onOpenSleep={() => setShowSleep(true)} />
+        <div className="flex-1 h-screen overflow-auto no-scrollbar">
+          <Routes>
+            <Route path="/" element={<HomePage darkMode={darkMode} toggleTheme={toggleTheme} />} />
+            <Route path="/my-network" element={<MyNetworkPage darkMode={darkMode} />} />
+            <Route path="/profile" element={<Profile darkMode={darkMode} />} />
+            <Route path="/memory-lane" element={<MemoryLanePage darkMode={darkMode} />} />
+            <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
+            <Route path="/netflix" element={<Netflix />} />
+            <Route path="/prime-video" element={<PrimeVideo />} />
+            <Route path="/disney" element={<Disney />} />
+            <Route path="/hulu" element={<Hulu />} />
+            <Route path="/youtube" element={<YouTube />} />
+            <Route path="/youtube-music" element={<YouTubeMusic />} />
+          </Routes>
+
+          {showSleep && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+              onClick={() => setShowSleep(false)}
+            >
+              <div onClick={(e) => e.stopPropagation()}>
+                <SleepTime onClose={() => setShowSleep(false)} darkMode={darkMode} />
+              </div>
             </div>
-        </Router>
-    );
-}
+          )}
+        </div>
+      </div>
+    </Router>
+  );
+
+  function toggleTheme() {
+    setDarkMode((prev) => !prev);
+  }
+};
 
 export default App;

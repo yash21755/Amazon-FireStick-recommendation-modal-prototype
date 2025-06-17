@@ -27,7 +27,7 @@ const MemoryLanePage = ({ darkMode }) => {
 
   return (
     <div className={`w-full h-full p-6 overflow-y-auto ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}>
-      <h1 className="text-3xl text font-bold mb-6">Memory Lane</h1>
+      <h1 className="text-3xl text font-bold mb-6">My Memory Lane</h1>
 
       <div className="... overflow-auto no-scrollbar">
         {memories.map((item) => (
@@ -37,7 +37,7 @@ const MemoryLanePage = ({ darkMode }) => {
             <img
               src={item.poster}
               alt={item.title}
-              className="w-56 h-60 object-fill"
+              className="w-56 h-68 object-fill"
             />
 
             {/* Center: Details */}

@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import VoiceAssistant from "./VoiceAssistant";
-
 import {
   FaUser,
   FaRegClock,
@@ -13,15 +12,14 @@ import {
   FaHistory,
   FaVideo,
   FaHome,
-  FaMicrophone
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const SideBarMenu = ({ darkMode, toggleTheme }) => {
+const SideBarMenu = ({ darkMode, toggleTheme, onOpenSleep }) => {
   const [expanded, setExpanded] = useState(false);
   const [listening, setListening] = useState(false);
-  const navigate = useNavigate();
   const recognitionRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => setExpanded(!expanded);
 
@@ -29,8 +27,8 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
     const cmd = command.toLowerCase();
 
     if (cmd.includes("home")) navigate("/");
-    else if (cmd.includes("profile")) alert("Navigating to Profile...");
-    else if (cmd.includes("timer")) alert("Opening Sleep Timer...");
+    else if (cmd.includes("profile")) navigate("/profile");
+    else if (cmd.includes("timer")) onOpenSleep();
     else if (cmd.includes("settings")) alert("Opening Settings...");
     else if (cmd.includes("theme")) toggleTheme();
     else if (cmd.includes("dark")) !darkMode && toggleTheme();
@@ -42,8 +40,7 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
   };
 
   const handleVoiceCommand = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
       alert("Your browser does not support voice commands.");
@@ -77,17 +74,17 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
 
   const menuItems = [
     { icon: <FaHome size={20} />, label: "Home", onClick: () => navigate("/") },
-    { icon: <FaUser size={20} />, label: "Profile", onClick:() => navigate("/profile") },
-    { icon: <FaRegClock size={20} />, label: "Sleep Timer" },
-    { icon: <FaCog size={20} />, label: "Settings" },
+    { icon: <FaUser size={20} />, label: "Profile", onClick: () => navigate("/profile") },
+    { icon: <FaRegClock size={20} />, label: "Sleep Timer", onClick: onOpenSleep },
+    { icon: <FaCog size={20} />, label: "Settings", onClick: () => alert("THIS IS A PROTOTYPE\nSettings not implemented yet") },
     {
       icon: darkMode ? <FaSun size={20} /> : <FaMoon size={20} />,
       label: "Toggle Theme",
-      onClick: toggleTheme
+      onClick: toggleTheme,
     },
     { icon: <FaUsers size={20} />, label: "My Network", onClick: () => navigate("/my-network") },
     { icon: <FaHistory size={20} />, label: "Memory Lane", onClick: () => navigate("/memory-lane") },
-    { icon: <FaVideo size={20} />, label: "Watch Along", onClick: () => navigate("/watch-along") }
+    { icon: <FaVideo size={20} />, label: "Watch Along", onClick: () => navigate("/watch-along") },
   ];
 
   return (
@@ -97,7 +94,6 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
       } ${expanded ? "w-1/6 min-w-[200px]" : "w-[50px]"}`}
     >
       <div>
-        {/* Expand/Collapse Button */}
         <div
           onClick={toggleSidebar}
           className={`flex items-center justify-center py-4 cursor-pointer hover:bg-gray-700 ${
@@ -109,7 +105,6 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
           {expanded && <span className="ml-3 text-sm">Collapse</span>}
         </div>
 
-        {/* Menu Items */}
         <div className="flex flex-col items-start mt-4 space-y-4">
           {menuItems.map((item, idx) => (
             <button
@@ -127,11 +122,9 @@ const SideBarMenu = ({ darkMode, toggleTheme }) => {
         </div>
       </div>
 
-{/* Microphone Button */}
-<div className="p-4 flex justify-center">
-  <VoiceAssistant darkMode={darkMode} toggleTheme={toggleTheme} />
-</div>
-
+      <div className="p-4 flex justify-center">
+        <VoiceAssistant darkMode={darkMode} toggleTheme={toggleTheme} />
+      </div>
     </div>
   );
 };
