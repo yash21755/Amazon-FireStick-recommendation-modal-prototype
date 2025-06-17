@@ -1,26 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdBanner from "../components/AdBanner";
 import RowSection from "../components/RowSection";
+import Papa from "papaparse";
+import csvFile from "../data/imdb_database.csv?url"; // Vite handles ?url import
 
 const PrimeVideo = () => {
-  const dummyData = [
-    { id: 1, title: "The Boys", img: "https://via.placeholder.com/150x220", rating: 8.7 },
-    { id: 2, title: "Jack Ryan", img: "https://via.placeholder.com/150x220", rating: 8.1 },
-    { id: 3, title: "Reacher", img: "https://via.placeholder.com/150x220", rating: 8.2 },
-    { id: 4, title: "Upload", img: "https://via.placeholder.com/150x220", rating: 7.9 },
-    { id: 5, title: "Citadel", img: "https://via.placeholder.com/150x220", rating: 7.3 },
-  ];
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    Papa.parse(csvFile, {
+      download: true,
+      header: true,
+      complete: (results) => {
+        const raw = results.data;
+const mapped = raw
+  .filter(
+    (row) =>
+      row.Poster_Link?.startsWith("http") &&
+      row.Series_Title &&
+      row.Released_Year
+  )
+  .map((row, idx) => ({
+    id: `${row.Series_Title.trim()}-${row.Released_Year.trim() || idx}`,
+    title: row.Series_Title.trim(),
+    img: row.Poster_Link.trim().replace(/_V1_.*\.jpg$/, "_V1_.jpg"), // <-- HERE
+    rating: parseFloat(row.IMDB_Rating),
+  }));
+
+        // Optional: remove duplicates
+        const seen = new Set();
+        const uniqueMovies = mapped.filter((m) => {
+          if (seen.has(m.id)) return false;
+          seen.add(m.id);
+          return true;
+        });
+
+        setMovies(uniqueMovies);
+      },
+    });
+  }, []);
 
   return (
-    <div className="w-full min-h-screen bg-[#232f3e] text-white space-y-10">
+    <div className="w-full min-h-screen bg-gray-900 text-white space-y-10 pb-10">
       <AdBanner />
-      <RowSection title="Trending in Your Region" items={dummyData} />
-      <RowSection title="Explore" items={dummyData} />
-      <RowSection title="Because You Watched 'The Boys'" items={dummyData} />
-      <RowSection title="New Releases" items={dummyData} />
-      <RowSection title="Highly Acclaimed (IMDb Sorted)" items={[...dummyData].sort((a, b) => b.rating - a.rating)} />
-      <RowSection title="Top Action Movies" items={dummyData} />
-      <RowSection title="Hollywood Greats" items={dummyData} />
+      <RowSection title="Trending Now" items={movies.slice(0, 10)} />
+      <RowSection title="New Releases" items={movies.slice(10, 20)} />
+      <RowSection title="Because You Watched 'The Boys'" items={movies.slice(20, 30)} />
+      <RowSection title="Top IMDb Rated" items={[...movies].sort((a, b) => b.rating - a.rating).slice(0, 10)} />
     </div>
   );
 };

@@ -5,15 +5,15 @@ const RowSection = ({ title, items }) => {
     <div className="space-y-3 ml-5">
       <h2 className="text-2xl font-semibold">{title}</h2>
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div
-            key={item.id}
-            className="min-w-[150px] bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+            key={item.id || `${item.title}-${index}`}
+            className="min-w-[220px] bg-gray-800 rounded-lg overflow-hidden shadow-lg"
           >
             <img
               src={item.img}
               alt={item.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-80 object-cover"
             />
             <div className="p-2">
               <h3 className="text-sm font-semibold truncate">{item.title}</h3>

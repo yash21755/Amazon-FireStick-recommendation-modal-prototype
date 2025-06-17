@@ -1,2706 +1,453 @@
 {
     "netflix": [
         {
-            "id": 1,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S5",
-            "name": "Stranger Things S5",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Florence Pugh",
-                "Jared Harris",
-                "Pedro Pascal"
-            ],
-            "description": "Stranger Things S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2746,
-            "genre": "Horror",
-            "imdb_rating": 7.9,
+            "name": "Stranger Things",
+            "reference_image": "./images/strangerthings.jpg",
+            "genre": "Thriller",
+            "season_count": 3,
+            "imdb_rating": 8.2,
             "attributes": {
-                "drama": 16,
-                "romance": 7,
-                "action": 19,
-                "comedy": 100,
-                "science": 100,
-                "mind_bending": 17,
-                "thriller": 39,
-                "horror": 91,
-                "fantasy": 97,
-                "historical": 61
-            }
+                "drama": 49.1,
+                "romance": 59.1,
+                "action": 52.3,
+                "comedy": 57.7,
+                "science": 49.7,
+                "mind_bending": 32.1,
+                "thriller": 37.1,
+                "horror": 52.7,
+                "fantasy": 57.1,
+                "historical": 67.1
+            },
+            "seasons": [
+                {
+                    "season": "S2",
+                    "description": "Stranger Things S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4581,
+                    "imdb_rating": 7.1
+                },
+                {
+                    "season": "S3",
+                    "description": "Stranger Things S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4952,
+                    "imdb_rating": 8.5
+                },
+                {
+                    "season": "S5",
+                    "description": "Stranger Things S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2746,
+                    "imdb_rating": 7.9
+                }
+            ]
         },
         {
-            "id": 2,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S5",
-            "name": "The Witcher S5",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Rami Malek",
-                "Florence Pugh",
-                "Anya Taylor-Joy"
-            ],
-            "description": "The Witcher S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 7150,
-            "genre": "Sci-Fi",
-            "imdb_rating": 7.9,
-            "attributes": {
-                "drama": 80,
-                "romance": 30,
-                "action": 88,
-                "comedy": 78,
-                "science": 3,
-                "mind_bending": 85,
-                "thriller": 90,
-                "horror": 54,
-                "fantasy": 2,
-                "historical": 79
-            }
-        },
-        {
-            "id": 3,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S3",
-            "name": "Money Heist S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Jared Harris",
-                "Rami Malek",
-                "Zendaya"
-            ],
-            "description": "Money Heist S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2546,
-            "genre": "Romance",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 18,
-                "romance": 75,
-                "action": 46,
-                "comedy": 97,
-                "science": 20,
-                "mind_bending": 99,
-                "thriller": 86,
-                "horror": 76,
-                "fantasy": 87,
-                "historical": 5
-            }
-        },
-        {
-            "id": 4,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S3",
-            "name": "Narcos S3",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Tom Holland",
-                "Florence Pugh",
-                "Zendaya"
-            ],
-            "description": "Narcos S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6812,
-            "genre": "Horror",
-            "imdb_rating": 6.2,
-            "attributes": {
-                "drama": 7,
-                "romance": 34,
-                "action": 65,
-                "comedy": 13,
-                "science": 83,
-                "mind_bending": 33,
-                "thriller": 86,
-                "horror": 10,
-                "fantasy": 67,
-                "historical": 52
-            }
-        },
-        {
-            "id": 5,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S5",
-            "name": "Black Mirror S5",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Zendaya",
-                "Jared Harris",
-                "Anya Taylor-Joy"
-            ],
-            "description": "Black Mirror S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2165,
-            "genre": "Romance",
-            "imdb_rating": 7.5,
-            "attributes": {
-                "drama": 84,
-                "romance": 45,
-                "action": 0,
-                "comedy": 59,
-                "science": 49,
-                "mind_bending": 47,
-                "thriller": 55,
-                "horror": 80,
-                "fantasy": 82,
-                "historical": 73
-            }
-        },
-        {
-            "id": 6,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S3",
-            "name": "Stranger Things S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Pedro Pascal",
-                "Millie Bobby Brown",
-                "Tom Holland"
-            ],
-            "description": "Stranger Things S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4952,
-            "genre": "Historical",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 47,
-                "romance": 35,
-                "action": 91,
-                "comedy": 95,
-                "science": 34,
-                "mind_bending": 20,
-                "thriller": 3,
-                "horror": 29,
-                "fantasy": 35,
-                "historical": 83
-            }
-        },
-        {
-            "id": 7,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S1",
-            "name": "The Witcher S1",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Zendaya",
-                "Pedro Pascal",
-                "Millie Bobby Brown"
-            ],
-            "description": "The Witcher S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6987,
+            "name": "The Witcher",
+            "reference_image": "./images/thewitcher.avif",
             "genre": "Action",
-            "imdb_rating": 7.9,
-            "attributes": {
-                "drama": 40,
-                "romance": 3,
-                "action": 38,
-                "comedy": 52,
-                "science": 22,
-                "mind_bending": 52,
-                "thriller": 27,
-                "horror": 57,
-                "fantasy": 68,
-                "historical": 73
-            }
-        },
-        {
-            "id": 8,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S1",
-            "name": "Money Heist S1",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Pedro Pascal",
-                "Tom Holland",
-                "Zendaya"
-            ],
-            "description": "Money Heist S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3975,
-            "genre": "Fantasy",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 97,
-                "romance": 29,
-                "action": 24,
-                "comedy": 54,
-                "science": 7,
-                "mind_bending": 81,
-                "thriller": 14,
-                "horror": 32,
-                "fantasy": 44,
-                "historical": 53
-            }
-        },
-        {
-            "id": 9,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S4",
-            "name": "Narcos S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Pedro Pascal",
-                "Anya Taylor-Joy",
-                "Millie Bobby Brown"
-            ],
-            "description": "Narcos S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6786,
-            "genre": "Thriller",
-            "imdb_rating": 6.4,
-            "attributes": {
-                "drama": 61,
-                "romance": 51,
-                "action": 86,
-                "comedy": 73,
-                "science": 73,
-                "mind_bending": 10,
-                "thriller": 63,
-                "horror": 42,
-                "fantasy": 25,
-                "historical": 71
-            }
-        },
-        {
-            "id": 10,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S1",
-            "name": "Black Mirror S1",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Zendaya",
-                "Rami Malek",
-                "Tom Holland"
-            ],
-            "description": "Black Mirror S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2732,
-            "genre": "Sci-Fi",
-            "imdb_rating": 7.1,
-            "attributes": {
-                "drama": 28,
-                "romance": 24,
-                "action": 40,
-                "comedy": 69,
-                "science": 97,
-                "mind_bending": 24,
-                "thriller": 36,
-                "horror": 2,
-                "fantasy": 78,
-                "historical": 37
-            }
-        },
-        {
-            "id": 11,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S2",
-            "name": "Stranger Things S2",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Zendaya",
-                "Rami Malek",
-                "Florence Pugh"
-            ],
-            "description": "Stranger Things S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4581,
-            "genre": "Thriller",
-            "imdb_rating": 7.1,
-            "attributes": {
-                "drama": 45,
-                "romance": 73,
-                "action": 17,
-                "comedy": 87,
-                "science": 13,
-                "mind_bending": 72,
-                "thriller": 19,
-                "horror": 54,
-                "fantasy": 96,
-                "historical": 69
-            }
-        },
-        {
-            "id": 12,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S4",
-            "name": "The Witcher S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Florence Pugh",
-                "Rami Malek",
-                "Tom Holland"
-            ],
-            "description": "The Witcher S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5601,
-            "genre": "Romance",
-            "imdb_rating": 6.9,
-            "attributes": {
-                "drama": 29,
-                "romance": 4,
-                "action": 62,
-                "comedy": 83,
-                "science": 72,
-                "mind_bending": 88,
-                "thriller": 59,
-                "horror": 54,
-                "fantasy": 67,
-                "historical": 60
-            }
-        },
-        {
-            "id": 13,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S3",
-            "name": "Money Heist S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Millie Bobby Brown",
-                "Anya Taylor-Joy",
-                "Tom Holland"
-            ],
-            "description": "Money Heist S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6371,
-            "genre": "Fantasy",
-            "imdb_rating": 6.9,
-            "attributes": {
-                "drama": 6,
-                "romance": 44,
-                "action": 1,
-                "comedy": 67,
-                "science": 26,
-                "mind_bending": 57,
-                "thriller": 22,
-                "horror": 26,
-                "fantasy": 15,
-                "historical": 54
-            }
-        },
-        {
-            "id": 14,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S1",
-            "name": "Narcos S1",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Jared Harris",
-                "Zendaya"
-            ],
-            "description": "Narcos S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5180,
-            "genre": "Sci-Fi",
-            "imdb_rating": 7.6,
-            "attributes": {
-                "drama": 93,
-                "romance": 39,
-                "action": 46,
-                "comedy": 44,
-                "science": 82,
-                "mind_bending": 45,
-                "thriller": 14,
-                "horror": 46,
-                "fantasy": 53,
-                "historical": 29
-            }
-        },
-        {
-            "id": 15,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S5",
-            "name": "Black Mirror S5",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Jared Harris",
-                "Anya Taylor-Joy",
-                "Florence Pugh"
-            ],
-            "description": "Black Mirror S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5015,
-            "genre": "Comedy",
-            "imdb_rating": 7.3,
-            "attributes": {
-                "drama": 1,
-                "romance": 81,
-                "action": 83,
-                "comedy": 90,
-                "science": 54,
-                "mind_bending": 32,
-                "thriller": 33,
-                "horror": 99,
-                "fantasy": 15,
-                "historical": 35
-            }
-        },
-        {
-            "id": 16,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S2",
-            "name": "Stranger Things S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Millie Bobby Brown",
-                "Tom Holland",
-                "Florence Pugh"
-            ],
-            "description": "Stranger Things S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4639,
-            "genre": "Sci-Fi",
-            "imdb_rating": 7.3,
-            "attributes": {
-                "drama": 80,
-                "romance": 83,
-                "action": 94,
-                "comedy": 20,
-                "science": 80,
-                "mind_bending": 6,
-                "thriller": 66,
-                "horror": 5,
-                "fantasy": 80,
-                "historical": 61
-            }
-        },
-        {
-            "id": 17,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S1",
-            "name": "The Witcher S1",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Rami Malek",
-                "Florence Pugh",
-                "Zendaya"
-            ],
-            "description": "The Witcher S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2469,
-            "genre": "Drama",
-            "imdb_rating": 6.6,
-            "attributes": {
-                "drama": 66,
-                "romance": 40,
-                "action": 77,
-                "comedy": 24,
-                "science": 15,
-                "mind_bending": 41,
-                "thriller": 35,
-                "horror": 76,
-                "fantasy": 40,
-                "historical": 8
-            }
-        },
-        {
-            "id": 18,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S2",
-            "name": "Money Heist S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Millie Bobby Brown",
-                "Tom Holland",
-                "Zendaya"
-            ],
-            "description": "Money Heist S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2149,
-            "genre": "Documentary",
-            "imdb_rating": 6.6,
-            "attributes": {
-                "drama": 46,
-                "romance": 23,
-                "action": 64,
-                "comedy": 90,
-                "science": 20,
-                "mind_bending": 98,
-                "thriller": 10,
-                "horror": 90,
-                "fantasy": 9,
-                "historical": 67
-            }
-        },
-        {
-            "id": 19,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S4",
-            "name": "Narcos S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Millie Bobby Brown",
-                "Zendaya",
-                "Tom Holland"
-            ],
-            "description": "Narcos S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6973,
-            "genre": "Drama",
-            "imdb_rating": 8.9,
-            "attributes": {
-                "drama": 65,
-                "romance": 30,
-                "action": 46,
-                "comedy": 38,
-                "science": 90,
-                "mind_bending": 47,
-                "thriller": 35,
-                "horror": 80,
-                "fantasy": 52,
-                "historical": 32
-            }
-        },
-        {
-            "id": 20,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S4",
-            "name": "Black Mirror S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Millie Bobby Brown",
-                "Florence Pugh",
-                "Tom Holland"
-            ],
-            "description": "Black Mirror S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2566,
-            "genre": "Historical",
-            "imdb_rating": 6.1,
-            "attributes": {
-                "drama": 5,
-                "romance": 5,
-                "action": 95,
-                "comedy": 57,
-                "science": 5,
-                "mind_bending": 60,
-                "thriller": 90,
-                "horror": 13,
-                "fantasy": 10,
-                "historical": 44
-            }
-        },
-        {
-            "id": 21,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S3",
-            "name": "Stranger Things S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Pedro Pascal",
-                "Anya Taylor-Joy",
-                "Jared Harris"
-            ],
-            "description": "Stranger Things S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2706,
-            "genre": "Action",
-            "imdb_rating": 6.0,
-            "attributes": {
-                "drama": 94,
-                "romance": 93,
-                "action": 0,
-                "comedy": 14,
-                "science": 97,
-                "mind_bending": 4,
-                "thriller": 86,
-                "horror": 78,
-                "fantasy": 59,
-                "historical": 53
-            }
-        },
-        {
-            "id": 22,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S2",
-            "name": "The Witcher S2",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Tom Holland",
-                "Florence Pugh"
-            ],
-            "description": "The Witcher S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3381,
-            "genre": "Horror",
-            "imdb_rating": 6.5,
-            "attributes": {
-                "drama": 85,
-                "romance": 46,
-                "action": 3,
-                "comedy": 58,
-                "science": 74,
-                "mind_bending": 29,
-                "thriller": 99,
-                "horror": 33,
-                "fantasy": 80,
-                "historical": 82
-            }
-        },
-        {
-            "id": 23,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S1",
-            "name": "Money Heist S1",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Florence Pugh",
-                "Anya Taylor-Joy",
-                "Zendaya"
-            ],
-            "description": "Money Heist S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5290,
-            "genre": "Romance",
-            "imdb_rating": 7.6,
-            "attributes": {
-                "drama": 19,
-                "romance": 91,
-                "action": 88,
-                "comedy": 81,
-                "science": 78,
-                "mind_bending": 21,
-                "thriller": 98,
-                "horror": 51,
-                "fantasy": 88,
-                "historical": 80
-            }
-        },
-        {
-            "id": 24,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S5",
-            "name": "Narcos S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Millie Bobby Brown",
-                "Jared Harris",
-                "Zendaya"
-            ],
-            "description": "Narcos S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5030,
-            "genre": "Thriller",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 12,
-                "romance": 30,
-                "action": 20,
-                "comedy": 71,
-                "science": 42,
-                "mind_bending": 8,
-                "thriller": 75,
-                "horror": 17,
-                "fantasy": 27,
-                "historical": 29
-            }
-        },
-        {
-            "id": 25,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S2",
-            "name": "Black Mirror S2",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Florence Pugh",
-                "Zendaya"
-            ],
-            "description": "Black Mirror S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3525,
-            "genre": "Drama",
+            "season_count": 5,
             "imdb_rating": 7.4,
             "attributes": {
-                "drama": 0,
-                "romance": 43,
-                "action": 88,
-                "comedy": 83,
-                "science": 73,
-                "mind_bending": 2,
-                "thriller": 28,
-                "horror": 51,
-                "fantasy": 2,
-                "historical": 30
-            }
+                "drama": 48.2,
+                "romance": 34.2,
+                "action": 49.7,
+                "comedy": 49.7,
+                "science": 38.2,
+                "mind_bending": 48.1,
+                "thriller": 48.1,
+                "horror": 54.1,
+                "fantasy": 38.1,
+                "historical": 49.1
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "The Witcher S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6987,
+                    "imdb_rating": 7.9
+                },
+                {
+                    "season": "S2",
+                    "description": "The Witcher S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2815,
+                    "imdb_rating": 8.0
+                },
+                {
+                    "season": "S3",
+                    "description": "The Witcher S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2824,
+                    "imdb_rating": 8.3
+                },
+                {
+                    "season": "S4",
+                    "description": "The Witcher S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5601,
+                    "imdb_rating": 6.9
+                },
+                {
+                    "season": "S5",
+                    "description": "The Witcher S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 7150,
+                    "imdb_rating": 7.9
+                }
+            ]
         },
         {
-            "id": 26,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S2",
-            "name": "Stranger Things S2",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Pedro Pascal",
-                "Florence Pugh",
-                "Anya Taylor-Joy"
-            ],
-            "description": "Stranger Things S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5211,
-            "genre": "Drama",
-            "imdb_rating": 6.3,
-            "attributes": {
-                "drama": 66,
-                "romance": 46,
-                "action": 24,
-                "comedy": 59,
-                "science": 13,
-                "mind_bending": 48,
-                "thriller": 6,
-                "horror": 89,
-                "fantasy": 29,
-                "historical": 75
-            }
-        },
-        {
-            "id": 27,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S3",
-            "name": "The Witcher S3",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Zendaya",
-                "Jared Harris",
-                "Rami Malek"
-            ],
-            "description": "The Witcher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2824,
-            "genre": "Documentary",
-            "imdb_rating": 8.3,
-            "attributes": {
-                "drama": 27,
-                "romance": 84,
-                "action": 29,
-                "comedy": 79,
-                "science": 83,
-                "mind_bending": 56,
-                "thriller": 8,
-                "horror": 98,
-                "fantasy": 15,
-                "historical": 3
-            }
-        },
-        {
-            "id": 28,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S3",
-            "name": "Money Heist S3",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Jared Harris",
-                "Zendaya",
-                "Florence Pugh"
-            ],
-            "description": "Money Heist S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5556,
-            "genre": "Historical",
-            "imdb_rating": 7.5,
-            "attributes": {
-                "drama": 15,
-                "romance": 26,
-                "action": 68,
-                "comedy": 49,
-                "science": 56,
-                "mind_bending": 77,
-                "thriller": 83,
-                "horror": 47,
-                "fantasy": 18,
-                "historical": 77
-            }
-        },
-        {
-            "id": 29,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S1",
-            "name": "Narcos S1",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Zendaya",
-                "Pedro Pascal",
-                "Florence Pugh"
-            ],
-            "description": "Narcos S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6262,
+            "name": "Money Heist",
+            "reference_image": "./images/moneyheist.jpg",
             "genre": "Fantasy",
-            "imdb_rating": 8.1,
+            "season_count": 5,
+            "imdb_rating": 7.9,
             "attributes": {
-                "drama": 24,
-                "romance": 40,
-                "action": 98,
-                "comedy": 57,
-                "science": 87,
-                "mind_bending": 55,
-                "thriller": 15,
-                "horror": 77,
-                "fantasy": 0,
-                "historical": 33
-            }
+                "drama": 37.4,
+                "romance": 54.4,
+                "action": 37.4,
+                "comedy": 54.4,
+                "science": 37.4,
+                "mind_bending": 54.4,
+                "thriller": 54.4,
+                "horror": 54.4,
+                "fantasy": 54.4,
+                "historical": 54.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "Money Heist S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 3975,
+                    "imdb_rating": 8.5
+                },
+                {
+                    "season": "S2",
+                    "description": "Money Heist S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2149,
+                    "imdb_rating": 6.6
+                },
+                {
+                    "season": "S3",
+                    "description": "Money Heist S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6371,
+                    "imdb_rating": 6.9
+                },
+                {
+                    "season": "S4",
+                    "description": "Money Heist S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6475,
+                    "imdb_rating": 7.5
+                },
+                {
+                    "season": "S5",
+                    "description": "Money Heist S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5015,
+                    "imdb_rating": 7.3
+                }
+            ]
         },
         {
-            "id": 30,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S3",
-            "name": "Black Mirror S3",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Jared Harris",
-                "Anya Taylor-Joy",
-                "Pedro Pascal"
-            ],
-            "description": "Black Mirror S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2802,
-            "genre": "Thriller",
-            "imdb_rating": 8.8,
-            "attributes": {
-                "drama": 29,
-                "romance": 15,
-                "action": 95,
-                "comedy": 73,
-                "science": 84,
-                "mind_bending": 64,
-                "thriller": 70,
-                "horror": 17,
-                "fantasy": 72,
-                "historical": 92
-            }
-        },
-        {
-            "id": 31,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S3",
-            "name": "Stranger Things S3",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Zendaya",
-                "Millie Bobby Brown"
-            ],
-            "description": "Stranger Things S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6859,
-            "genre": "Drama",
-            "imdb_rating": 9.1,
-            "attributes": {
-                "drama": 33,
-                "romance": 41,
-                "action": 81,
-                "comedy": 12,
-                "science": 76,
-                "mind_bending": 42,
-                "thriller": 71,
-                "horror": 68,
-                "fantasy": 17,
-                "historical": 88
-            }
-        },
-        {
-            "id": 32,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S5",
-            "name": "The Witcher S5",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Millie Bobby Brown",
-                "Florence Pugh",
-                "Zendaya"
-            ],
-            "description": "The Witcher S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3051,
-            "genre": "Historical",
-            "imdb_rating": 8.1,
-            "attributes": {
-                "drama": 36,
-                "romance": 79,
-                "action": 75,
-                "comedy": 51,
-                "science": 14,
-                "mind_bending": 40,
-                "thriller": 45,
-                "horror": 96,
-                "fantasy": 94,
-                "historical": 3
-            }
-        },
-        {
-            "id": 33,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S4",
-            "name": "Money Heist S4",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Pedro Pascal",
-                "Millie Bobby Brown",
-                "Anya Taylor-Joy"
-            ],
-            "description": "Money Heist S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 1810,
-            "genre": "Romance",
-            "imdb_rating": 7.0,
-            "attributes": {
-                "drama": 43,
-                "romance": 30,
-                "action": 21,
-                "comedy": 87,
-                "science": 23,
-                "mind_bending": 87,
-                "thriller": 21,
-                "horror": 48,
-                "fantasy": 73,
-                "historical": 87
-            }
-        },
-        {
-            "id": 34,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S2",
-            "name": "Narcos S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Rami Malek",
-                "Zendaya",
-                "Tom Holland"
-            ],
-            "description": "Narcos S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5443,
+            "name": "Narcos",
+            "reference_image": "./images/narcos.jpg",
             "genre": "Sci-Fi",
-            "imdb_rating": 7.6,
+            "season_count": 5,
+            "imdb_rating": 7.4,
             "attributes": {
-                "drama": 47,
-                "romance": 98,
-                "action": 73,
-                "comedy": 94,
-                "science": 94,
-                "mind_bending": 23,
-                "thriller": 14,
-                "horror": 14,
-                "fantasy": 94,
-                "historical": 50
-            }
+                "drama": 37.4,
+                "romance": 54.4,
+                "action": 37.4,
+                "comedy": 54.4,
+                "science": 37.4,
+                "mind_bending": 54.4,
+                "thriller": 54.4,
+                "horror": 54.4,
+                "fantasy": 54.4,
+                "historical": 54.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "Narcos S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5180,
+                    "imdb_rating": 7.6
+                },
+                {
+                    "season": "S2",
+                    "description": "Narcos S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5443,
+                    "imdb_rating": 7.6
+                },
+                {
+                    "season": "S3",
+                    "description": "Narcos S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6812,
+                    "imdb_rating": 6.2
+                },
+                {
+                    "season": "S4",
+                    "description": "Narcos S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6786,
+                    "imdb_rating": 6.4
+                },
+                {
+                    "season": "S5",
+                    "description": "Narcos S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5030,
+                    "imdb_rating": 8.5
+                }
+            ]
         },
         {
-            "id": 35,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S2",
-            "name": "Black Mirror S2",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Pedro Pascal",
-                "Florence Pugh",
-                "Rami Malek"
-            ],
-            "description": "Black Mirror S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2035,
-            "genre": "Action",
-            "imdb_rating": 7.8,
-            "attributes": {
-                "drama": 42,
-                "romance": 38,
-                "action": 49,
-                "comedy": 62,
-                "science": 96,
-                "mind_bending": 17,
-                "thriller": 37,
-                "horror": 43,
-                "fantasy": 1,
-                "historical": 65
-            }
-        },
-        {
-            "id": 36,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S5",
-            "name": "Stranger Things S5",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Rami Malek",
-                "Florence Pugh",
-                "Pedro Pascal"
-            ],
-            "description": "Stranger Things S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4211,
-            "genre": "Fantasy",
-            "imdb_rating": 9.1,
-            "attributes": {
-                "drama": 54,
-                "romance": 88,
-                "action": 15,
-                "comedy": 74,
-                "science": 38,
-                "mind_bending": 58,
-                "thriller": 71,
-                "horror": 43,
-                "fantasy": 87,
-                "historical": 96
-            }
-        },
-        {
-            "id": 37,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S5",
-            "name": "The Witcher S5",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Florence Pugh",
-                "Zendaya",
-                "Anya Taylor-Joy"
-            ],
-            "description": "The Witcher S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6556,
-            "genre": "Fantasy",
-            "imdb_rating": 6.1,
-            "attributes": {
-                "drama": 4,
-                "romance": 13,
-                "action": 4,
-                "comedy": 93,
-                "science": 90,
-                "mind_bending": 29,
-                "thriller": 58,
-                "horror": 90,
-                "fantasy": 69,
-                "historical": 71
-            }
-        },
-        {
-            "id": 38,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S5",
-            "name": "Money Heist S5",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Tom Holland",
-                "Rami Malek",
-                "Florence Pugh"
-            ],
-            "description": "Money Heist S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6480,
-            "genre": "Romance",
-            "imdb_rating": 8.0,
-            "attributes": {
-                "drama": 93,
-                "romance": 94,
-                "action": 73,
-                "comedy": 86,
-                "science": 79,
-                "mind_bending": 28,
-                "thriller": 9,
-                "horror": 71,
-                "fantasy": 86,
-                "historical": 94
-            }
-        },
-        {
-            "id": 39,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S3",
-            "name": "Narcos S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Millie Bobby Brown",
-                "Anya Taylor-Joy",
-                "Florence Pugh"
-            ],
-            "description": "Narcos S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6788,
-            "genre": "Thriller",
-            "imdb_rating": 8.4,
-            "attributes": {
-                "drama": 1,
-                "romance": 51,
-                "action": 85,
-                "comedy": 85,
-                "science": 100,
-                "mind_bending": 75,
-                "thriller": 79,
-                "horror": 57,
-                "fantasy": 81,
-                "historical": 34
-            }
-        },
-        {
-            "id": 40,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S1",
-            "name": "Black Mirror S1",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Rami Malek",
-                "Pedro Pascal",
-                "Zendaya"
-            ],
-            "description": "Black Mirror S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4489,
-            "genre": "Documentary",
-            "imdb_rating": 8.4,
-            "attributes": {
-                "drama": 94,
-                "romance": 61,
-                "action": 48,
-                "comedy": 19,
-                "science": 83,
-                "mind_bending": 89,
-                "thriller": 67,
-                "horror": 82,
-                "fantasy": 58,
-                "historical": 71
-            }
-        },
-        {
-            "id": 41,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S2",
-            "name": "Stranger Things S2",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Tom Holland",
-                "Millie Bobby Brown"
-            ],
-            "description": "Stranger Things S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2315,
-            "genre": "Drama",
-            "imdb_rating": 9.4,
-            "attributes": {
-                "drama": 24,
-                "romance": 90,
-                "action": 78,
-                "comedy": 33,
-                "science": 22,
-                "mind_bending": 29,
-                "thriller": 26,
-                "horror": 29,
-                "fantasy": 69,
-                "historical": 44
-            }
-        },
-        {
-            "id": 42,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S3",
-            "name": "The Witcher S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Pedro Pascal",
-                "Zendaya"
-            ],
-            "description": "The Witcher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3965,
-            "genre": "Romance",
-            "imdb_rating": 6.2,
-            "attributes": {
-                "drama": 6,
-                "romance": 49,
-                "action": 34,
-                "comedy": 46,
-                "science": 35,
-                "mind_bending": 41,
-                "thriller": 7,
-                "horror": 29,
-                "fantasy": 21,
-                "historical": 43
-            }
-        },
-        {
-            "id": 43,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S4",
-            "name": "Money Heist S4",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Zendaya",
-                "Tom Holland",
-                "Rami Malek"
-            ],
-            "description": "Money Heist S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6475,
-            "genre": "Fantasy",
+            "name": "Black Mirror",
+            "reference_image": "./images/blackmirror.jpg",
+            "genre": "Sci-Fi",
+            "season_count": 5,
             "imdb_rating": 7.5,
             "attributes": {
-                "drama": 93,
-                "romance": 96,
-                "action": 2,
-                "comedy": 34,
-                "science": 91,
-                "mind_bending": 63,
-                "thriller": 89,
-                "horror": 34,
-                "fantasy": 92,
-                "historical": 78
-            }
-        },
-        {
-            "id": 44,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S2",
-            "name": "Narcos S2",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Florence Pugh",
-                "Tom Holland"
-            ],
-            "description": "Narcos S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3036,
-            "genre": "Thriller",
-            "imdb_rating": 9.0,
-            "attributes": {
-                "drama": 26,
-                "romance": 7,
-                "action": 7,
-                "comedy": 76,
-                "science": 65,
-                "mind_bending": 74,
-                "thriller": 45,
-                "horror": 4,
-                "fantasy": 4,
-                "historical": 14
-            }
-        },
-        {
-            "id": 45,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S5",
-            "name": "Black Mirror S5",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Rami Malek",
-                "Florence Pugh",
-                "Jared Harris"
-            ],
-            "description": "Black Mirror S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2921,
-            "genre": "Historical",
-            "imdb_rating": 9.4,
-            "attributes": {
-                "drama": 28,
-                "romance": 62,
-                "action": 37,
-                "comedy": 25,
-                "science": 78,
-                "mind_bending": 58,
-                "thriller": 7,
-                "horror": 44,
-                "fantasy": 99,
-                "historical": 43
-            }
-        },
-        {
-            "id": 46,
-            "reference_image": "https://via.placeholder.com/300x450?text=Stranger+Things+S3",
-            "name": "Stranger Things S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Millie Bobby Brown",
-                "Pedro Pascal"
-            ],
-            "description": "Stranger Things S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3212,
-            "genre": "Historical",
-            "imdb_rating": 9.1,
-            "attributes": {
-                "drama": 55,
-                "romance": 74,
-                "action": 31,
-                "comedy": 49,
-                "science": 57,
-                "mind_bending": 4,
-                "thriller": 59,
-                "horror": 23,
-                "fantasy": 67,
-                "historical": 43
-            }
-        },
-        {
-            "id": 47,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Witcher+S2",
-            "name": "The Witcher S2",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Florence Pugh",
-                "Zendaya",
-                "Millie Bobby Brown"
-            ],
-            "description": "The Witcher S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2815,
-            "genre": "Fantasy",
-            "imdb_rating": 8.0,
-            "attributes": {
-                "drama": 93,
-                "romance": 32,
-                "action": 68,
-                "comedy": 10,
-                "science": 97,
-                "mind_bending": 1,
-                "thriller": 66,
-                "horror": 97,
-                "fantasy": 44,
-                "historical": 94
-            }
-        },
-        {
-            "id": 48,
-            "reference_image": "https://via.placeholder.com/300x450?text=Money+Heist+S4",
-            "name": "Money Heist S4",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Tom Holland",
-                "Florence Pugh",
-                "Jared Harris"
-            ],
-            "description": "Money Heist S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5080,
-            "genre": "Documentary",
-            "imdb_rating": 8.9,
-            "attributes": {
-                "drama": 62,
-                "romance": 51,
-                "action": 9,
-                "comedy": 86,
-                "science": 42,
-                "mind_bending": 0,
-                "thriller": 65,
-                "horror": 70,
-                "fantasy": 96,
-                "historical": 12
-            }
-        },
-        {
-            "id": 49,
-            "reference_image": "https://via.placeholder.com/300x450?text=Narcos+S5",
-            "name": "Narcos S5",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Zendaya",
-                "Jared Harris",
-                "Pedro Pascal"
-            ],
-            "description": "Narcos S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3600,
-            "genre": "Romance",
-            "imdb_rating": 6.7,
-            "attributes": {
-                "drama": 7,
-                "romance": 5,
-                "action": 56,
-                "comedy": 77,
-                "science": 87,
-                "mind_bending": 37,
-                "thriller": 6,
-                "horror": 4,
-                "fantasy": 71,
-                "historical": 2
-            }
-        },
-        {
-            "id": 50,
-            "reference_image": "https://via.placeholder.com/300x450?text=Black+Mirror+S1",
-            "name": "Black Mirror S1",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Pedro Pascal",
-                "Tom Holland",
-                "Jared Harris"
-            ],
-            "description": "Black Mirror S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4140,
-            "genre": "Fantasy",
-            "imdb_rating": 7.7,
-            "attributes": {
-                "drama": 57,
-                "romance": 5,
-                "action": 18,
-                "comedy": 11,
-                "science": 88,
-                "mind_bending": 49,
-                "thriller": 39,
-                "horror": 19,
-                "fantasy": 6,
-                "historical": 70
-            }
+                "drama": 37.4,
+                "romance": 54.4,
+                "action": 37.4,
+                "comedy": 54.4,
+                "science": 37.4,
+                "mind_bending": 54.4,
+                "thriller": 54.4,
+                "horror": 54.4,
+                "fantasy": 54.4,
+                "historical": 54.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "Black Mirror S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2732,
+                    "imdb_rating": 7.1
+                },
+                {
+                    "season": "S2",
+                    "description": "Black Mirror S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 3525,
+                    "imdb_rating": 7.4
+                },
+                {
+                    "season": "S3",
+                    "description": "Black Mirror S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2802,
+                    "imdb_rating": 8.8
+                },
+                {
+                    "season": "S4",
+                    "description": "Black Mirror S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2566,
+                    "imdb_rating": 6.1
+                },
+                {
+                    "season": "S5",
+                    "description": "Black Mirror S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5015,
+                    "imdb_rating": 7.3
+                }
+            ]
         }
     ],
     "amazon_prime": [
         {
-            "id": 51,
+            "name": "The Boys",
             "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S1",
-            "name": "The Boys S1",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Rami Malek",
-                "Millie Bobby Brown",
-                "Florence Pugh"
-            ],
-            "description": "The Boys S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 1995,
             "genre": "Documentary",
-            "imdb_rating": 9.4,
+            "season_count": 5,
+            "imdb_rating": 8.4,
             "attributes": {
-                "drama": 93,
-                "romance": 99,
-                "action": 45,
-                "comedy": 85,
-                "science": 84,
-                "mind_bending": 84,
-                "thriller": 15,
-                "horror": 56,
-                "fantasy": 23,
-                "historical": 10
-            }
+                "drama": 67.1,
+                "romance": 61.4,
+                "action": 62.4,
+                "comedy": 67.1,
+                "science": 61.4,
+                "mind_bending": 72.4,
+                "thriller": 46.4,
+                "horror": 56.4,
+                "fantasy": 61.4,
+                "historical": 50.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "The Boys S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 1995,
+                    "imdb_rating": 9.4
+                },
+                {
+                    "season": "S2",
+                    "description": "The Boys S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 3883,
+                    "imdb_rating": 6.6
+                },
+                {
+                    "season": "S3",
+                    "description": "The Boys S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 3373,
+                    "imdb_rating": 7.3
+                },
+                {
+                    "season": "S4",
+                    "description": "The Boys S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4421,
+                    "imdb_rating": 6.2
+                },
+                {
+                    "season": "S5",
+                    "description": "The Boys S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2381,
+                    "imdb_rating": 7.9
+                }
+            ]
         },
         {
-            "id": 52,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S2",
-            "name": "Jack Ryan S2",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Jared Harris",
-                "Anya Taylor-Joy",
-                "Pedro Pascal"
-            ],
-            "description": "Jack Ryan S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6656,
+            "name": "Jack Ryan",
+            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S1",
             "genre": "Historical",
-            "imdb_rating": 8.9,
+            "season_count": 5,
+            "imdb_rating": 7.4,
             "attributes": {
-                "drama": 79,
-                "romance": 30,
-                "action": 96,
-                "comedy": 84,
-                "science": 96,
-                "mind_bending": 67,
-                "thriller": 78,
-                "horror": 81,
-                "fantasy": 14,
-                "historical": 62
-            }
+                "drama": 54.1,
+                "romance": 54.1,
+                "action": 54.1,
+                "comedy": 54.1,
+                "science": 54.1,
+                "mind_bending": 54.1,
+                "thriller": 54.1,
+                "horror": 54.1,
+                "fantasy": 54.1,
+                "historical": 54.1
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "Jack Ryan S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6656,
+                    "imdb_rating": 8.9
+                },
+                {
+                    "season": "S2",
+                    "description": "Jack Ryan S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5834,
+                    "imdb_rating": 9.2
+                },
+                {
+                    "season": "S3",
+                    "description": "Jack Ryan S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 7081,
+                    "imdb_rating": 6.7
+                },
+                {
+                    "season": "S4",
+                    "description": "Jack Ryan S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4421,
+                    "imdb_rating": 6.2
+                },
+                {
+                    "season": "S5",
+                    "description": "Jack Ryan S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6707,
+                    "imdb_rating": 6.8
+                }
+            ]
         },
         {
-            "id": 53,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S5",
-            "name": "Fleabag S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Jared Harris",
-                "Rami Malek",
-                "Zendaya"
-            ],
-            "description": "Fleabag S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4195,
-            "genre": "Documentary",
-            "imdb_rating": 6.6,
-            "attributes": {
-                "drama": 70,
-                "romance": 76,
-                "action": 56,
-                "comedy": 1,
-                "science": 81,
-                "mind_bending": 48,
-                "thriller": 66,
-                "horror": 26,
-                "fantasy": 26,
-                "historical": 95
-            }
-        },
-        {
-            "id": 54,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S4",
-            "name": "The Marvelous Mrs. Maisel S4",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Jared Harris",
-                "Zendaya",
-                "Anya Taylor-Joy"
-            ],
-            "description": "The Marvelous Mrs. Maisel S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2096,
-            "genre": "Sci-Fi",
-            "imdb_rating": 8.0,
-            "attributes": {
-                "drama": 10,
-                "romance": 6,
-                "action": 45,
-                "comedy": 57,
-                "science": 29,
-                "mind_bending": 6,
-                "thriller": 54,
-                "horror": 47,
-                "fantasy": 76,
-                "historical": 83
-            }
-        },
-        {
-            "id": 55,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S3",
-            "name": "Reacher S3",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Millie Bobby Brown",
-                "Tom Holland",
-                "Jared Harris"
-            ],
-            "description": "Reacher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5834,
-            "genre": "Sci-Fi",
-            "imdb_rating": 9.2,
-            "attributes": {
-                "drama": 39,
-                "romance": 48,
-                "action": 45,
-                "comedy": 33,
-                "science": 70,
-                "mind_bending": 4,
-                "thriller": 47,
-                "horror": 74,
-                "fantasy": 16,
-                "historical": 13
-            }
-        },
-        {
-            "id": 56,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S1",
-            "name": "The Boys S1",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Florence Pugh",
-                "Pedro Pascal",
-                "Millie Bobby Brown"
-            ],
-            "description": "The Boys S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5941,
-            "genre": "Documentary",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 57,
-                "romance": 20,
-                "action": 75,
-                "comedy": 32,
-                "science": 71,
-                "mind_bending": 8,
-                "thriller": 78,
-                "horror": 47,
-                "fantasy": 51,
-                "historical": 15
-            }
-        },
-        {
-            "id": 57,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S4",
-            "name": "Jack Ryan S4",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Pedro Pascal",
-                "Florence Pugh",
-                "Millie Bobby Brown"
-            ],
-            "description": "Jack Ryan S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4421,
-            "genre": "Action",
-            "imdb_rating": 6.2,
-            "attributes": {
-                "drama": 58,
-                "romance": 85,
-                "action": 35,
-                "comedy": 4,
-                "science": 24,
-                "mind_bending": 6,
-                "thriller": 55,
-                "horror": 94,
-                "fantasy": 2,
-                "historical": 41
-            }
-        },
-        {
-            "id": 58,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S4",
-            "name": "Fleabag S4",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Zendaya",
-                "Rami Malek",
-                "Tom Holland"
-            ],
-            "description": "Fleabag S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6369,
-            "genre": "Historical",
-            "imdb_rating": 7.7,
-            "attributes": {
-                "drama": 6,
-                "romance": 66,
-                "action": 76,
-                "comedy": 7,
-                "science": 47,
-                "mind_bending": 21,
-                "thriller": 65,
-                "horror": 50,
-                "fantasy": 15,
-                "historical": 91
-            }
-        },
-        {
-            "id": 59,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S5",
-            "name": "The Marvelous Mrs. Maisel S5",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Florence Pugh",
-                "Pedro Pascal",
-                "Rami Malek"
-            ],
-            "description": "The Marvelous Mrs. Maisel S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5559,
-            "genre": "Fantasy",
-            "imdb_rating": 9.2,
-            "attributes": {
-                "drama": 16,
-                "romance": 59,
-                "action": 34,
-                "comedy": 90,
-                "science": 52,
-                "mind_bending": 94,
-                "thriller": 46,
-                "horror": 78,
-                "fantasy": 39,
-                "historical": 10
-            }
-        },
-        {
-            "id": 60,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S4",
-            "name": "Reacher S4",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Tom Holland",
-                "Florence Pugh",
-                "Pedro Pascal"
-            ],
-            "description": "Reacher S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3969,
-            "genre": "Fantasy",
-            "imdb_rating": 8.6,
-            "attributes": {
-                "drama": 27,
-                "romance": 81,
-                "action": 86,
-                "comedy": 66,
-                "science": 21,
-                "mind_bending": 72,
-                "thriller": 41,
-                "horror": 21,
-                "fantasy": 37,
-                "historical": 54
-            }
-        },
-        {
-            "id": 61,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S5",
-            "name": "The Boys S5",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Millie Bobby Brown",
-                "Pedro Pascal"
-            ],
-            "description": "The Boys S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2381,
-            "genre": "Documentary",
-            "imdb_rating": 7.9,
-            "attributes": {
-                "drama": 90,
-                "romance": 97,
-                "action": 99,
-                "comedy": 80,
-                "science": 63,
-                "mind_bending": 26,
-                "thriller": 68,
-                "horror": 97,
-                "fantasy": 2,
-                "historical": 50
-            }
-        },
-        {
-            "id": 62,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S4",
-            "name": "Jack Ryan S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Millie Bobby Brown",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4346,
-            "genre": "Comedy",
-            "imdb_rating": 6.8,
-            "attributes": {
-                "drama": 42,
-                "romance": 44,
-                "action": 32,
-                "comedy": 1,
-                "science": 1,
-                "mind_bending": 98,
-                "thriller": 85,
-                "horror": 0,
-                "fantasy": 64,
-                "historical": 49
-            }
-        },
-        {
-            "id": 63,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S2",
-            "name": "Fleabag S2",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Rami Malek",
-                "Millie Bobby Brown"
-            ],
-            "description": "Fleabag S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 7170,
-            "genre": "Documentary",
+            "name": "Fleabag",
+            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S1",
+            "genre": "Drama",
+            "season_count": 5,
             "imdb_rating": 7.6,
             "attributes": {
-                "drama": 32,
-                "romance": 71,
-                "action": 97,
-                "comedy": 91,
-                "science": 26,
-                "mind_bending": 22,
-                "thriller": 26,
-                "horror": 84,
-                "fantasy": 97,
-                "historical": 32
-            }
+                "drama": 37.4,
+                "romance": 54.4,
+                "action": 37.4,
+                "comedy": 54.4,
+                "science": 37.4,
+                "mind_bending": 54.4,
+                "thriller": 54.4,
+                "horror": 54.4,
+                "fantasy": 54.4,
+                "historical": 54.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "Fleabag S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2002,
+                    "imdb_rating": 7.4
+                },
+                {
+                    "season": "S2",
+                    "description": "Fleabag S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2719,
+                    "imdb_rating": 7.4
+                },
+                {
+                    "season": "S3",
+                    "description": "Fleabag S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5356,
+                    "imdb_rating": 8.8
+                },
+                {
+                    "season": "S4",
+                    "description": "Fleabag S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 3573,
+                    "imdb_rating": 7.1
+                },
+                {
+                    "season": "S5",
+                    "description": "Fleabag S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4195,
+                    "imdb_rating": 6.6
+                }
+            ]
         },
         {
-            "id": 64,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S3",
-            "name": "The Marvelous Mrs. Maisel S3",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Zendaya",
-                "Tom Holland",
-                "Pedro Pascal"
-            ],
-            "description": "The Marvelous Mrs. Maisel S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2277,
-            "genre": "Comedy",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 26,
-                "romance": 38,
-                "action": 17,
-                "comedy": 51,
-                "science": 41,
-                "mind_bending": 76,
-                "thriller": 27,
-                "horror": 13,
-                "fantasy": 90,
-                "historical": 8
-            }
-        },
-        {
-            "id": 65,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S3",
-            "name": "Reacher S3",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Millie Bobby Brown",
-                "Jared Harris",
-                "Rami Malek"
-            ],
-            "description": "Reacher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2110,
-            "genre": "Horror",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 33,
-                "romance": 2,
-                "action": 46,
-                "comedy": 86,
-                "science": 22,
-                "mind_bending": 6,
-                "thriller": 86,
-                "horror": 50,
-                "fantasy": 59,
-                "historical": 13
-            }
-        },
-        {
-            "id": 66,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S2",
-            "name": "The Boys S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Tom Holland",
-                "Zendaya",
-                "Anya Taylor-Joy"
-            ],
-            "description": "The Boys S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3883,
-            "genre": "Horror",
-            "imdb_rating": 6.6,
-            "attributes": {
-                "drama": 68,
-                "romance": 37,
-                "action": 24,
-                "comedy": 21,
-                "science": 66,
-                "mind_bending": 23,
-                "thriller": 56,
-                "horror": 94,
-                "fantasy": 91,
-                "historical": 77
-            }
-        },
-        {
-            "id": 67,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S4",
-            "name": "Jack Ryan S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Zendaya",
-                "Rami Malek",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4558,
-            "genre": "Historical",
-            "imdb_rating": 8.4,
-            "attributes": {
-                "drama": 94,
-                "romance": 0,
-                "action": 70,
-                "comedy": 56,
-                "science": 1,
-                "mind_bending": 11,
-                "thriller": 51,
-                "horror": 73,
-                "fantasy": 92,
-                "historical": 37
-            }
-        },
-        {
-            "id": 68,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S3",
-            "name": "Fleabag S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Millie Bobby Brown",
-                "Anya Taylor-Joy",
-                "Tom Holland"
-            ],
-            "description": "Fleabag S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5356,
-            "genre": "Documentary",
-            "imdb_rating": 8.8,
-            "attributes": {
-                "drama": 16,
-                "romance": 64,
-                "action": 69,
-                "comedy": 23,
-                "science": 4,
-                "mind_bending": 95,
-                "thriller": 40,
-                "horror": 70,
-                "fantasy": 69,
-                "historical": 65
-            }
-        },
-        {
-            "id": 69,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S5",
-            "name": "The Marvelous Mrs. Maisel S5",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Millie Bobby Brown",
-                "Pedro Pascal",
-                "Zendaya"
-            ],
-            "description": "The Marvelous Mrs. Maisel S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4377,
-            "genre": "Horror",
-            "imdb_rating": 9.3,
-            "attributes": {
-                "drama": 80,
-                "romance": 81,
-                "action": 23,
-                "comedy": 79,
-                "science": 58,
-                "mind_bending": 36,
-                "thriller": 69,
-                "horror": 57,
-                "fantasy": 39,
-                "historical": 80
-            }
-        },
-        {
-            "id": 70,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S1",
-            "name": "Reacher S1",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Florence Pugh",
-                "Tom Holland",
-                "Zendaya"
-            ],
-            "description": "Reacher S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6323,
-            "genre": "Historical",
-            "imdb_rating": 7.1,
-            "attributes": {
-                "drama": 19,
-                "romance": 62,
-                "action": 74,
-                "comedy": 89,
-                "science": 26,
-                "mind_bending": 81,
-                "thriller": 25,
-                "horror": 92,
-                "fantasy": 37,
-                "historical": 77
-            }
-        },
-        {
-            "id": 71,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S2",
-            "name": "The Boys S2",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Florence Pugh",
-                "Zendaya"
-            ],
-            "description": "The Boys S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3028,
+            "name": "The Marvelous Mrs. Maisel",
+            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S1",
             "genre": "Thriller",
-            "imdb_rating": 7.2,
-            "attributes": {
-                "drama": 82,
-                "romance": 42,
-                "action": 35,
-                "comedy": 88,
-                "science": 76,
-                "mind_bending": 12,
-                "thriller": 89,
-                "horror": 36,
-                "fantasy": 84,
-                "historical": 72
-            }
-        },
-        {
-            "id": 72,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S3",
-            "name": "Jack Ryan S3",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Rami Malek",
-                "Zendaya",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 7081,
-            "genre": "Romance",
-            "imdb_rating": 6.7,
-            "attributes": {
-                "drama": 89,
-                "romance": 52,
-                "action": 51,
-                "comedy": 18,
-                "science": 49,
-                "mind_bending": 83,
-                "thriller": 58,
-                "horror": 0,
-                "fantasy": 75,
-                "historical": 59
-            }
-        },
-        {
-            "id": 73,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S5",
-            "name": "Fleabag S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Tom Holland",
-                "Millie Bobby Brown",
-                "Pedro Pascal"
-            ],
-            "description": "Fleabag S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6617,
-            "genre": "Sci-Fi",
-            "imdb_rating": 6.8,
-            "attributes": {
-                "drama": 74,
-                "romance": 7,
-                "action": 8,
-                "comedy": 44,
-                "science": 1,
-                "mind_bending": 26,
-                "thriller": 68,
-                "horror": 3,
-                "fantasy": 44,
-                "historical": 97
-            }
-        },
-        {
-            "id": 74,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S3",
-            "name": "The Marvelous Mrs. Maisel S3",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Pedro Pascal",
-                "Rami Malek",
-                "Anya Taylor-Joy"
-            ],
-            "description": "The Marvelous Mrs. Maisel S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4658,
-            "genre": "Historical",
-            "imdb_rating": 8.4,
-            "attributes": {
-                "drama": 9,
-                "romance": 24,
-                "action": 48,
-                "comedy": 3,
-                "science": 37,
-                "mind_bending": 6,
-                "thriller": 64,
-                "horror": 40,
-                "fantasy": 68,
-                "historical": 13
-            }
-        },
-        {
-            "id": 75,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S5",
-            "name": "Reacher S5",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Tom Holland",
-                "Jared Harris",
-                "Zendaya"
-            ],
-            "description": "Reacher S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6451,
-            "genre": "Fantasy",
-            "imdb_rating": 6.5,
-            "attributes": {
-                "drama": 79,
-                "romance": 22,
-                "action": 74,
-                "comedy": 75,
-                "science": 76,
-                "mind_bending": 29,
-                "thriller": 83,
-                "horror": 31,
-                "fantasy": 80,
-                "historical": 68
-            }
-        },
-        {
-            "id": 76,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S1",
-            "name": "The Boys S1",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Zendaya",
-                "Anya Taylor-Joy",
-                "Jared Harris"
-            ],
-            "description": "The Boys S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6326,
-            "genre": "Thriller",
-            "imdb_rating": 6.2,
-            "attributes": {
-                "drama": 16,
-                "romance": 82,
-                "action": 83,
-                "comedy": 83,
-                "science": 58,
-                "mind_bending": 5,
-                "thriller": 87,
-                "horror": 13,
-                "fantasy": 0,
-                "historical": 41
-            }
-        },
-        {
-            "id": 77,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S3",
-            "name": "Jack Ryan S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Tom Holland",
-                "Anya Taylor-Joy",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5458,
-            "genre": "Thriller",
-            "imdb_rating": 6.8,
-            "attributes": {
-                "drama": 64,
-                "romance": 73,
-                "action": 6,
-                "comedy": 88,
-                "science": 2,
-                "mind_bending": 51,
-                "thriller": 82,
-                "horror": 51,
-                "fantasy": 51,
-                "historical": 90
-            }
-        },
-        {
-            "id": 78,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S5",
-            "name": "Fleabag S5",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Zendaya",
-                "Anya Taylor-Joy",
-                "Florence Pugh"
-            ],
-            "description": "Fleabag S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4156,
-            "genre": "Romance",
+            "season_count": 5,
             "imdb_rating": 8.1,
             "attributes": {
-                "drama": 94,
-                "romance": 58,
-                "action": 62,
-                "comedy": 74,
-                "science": 98,
-                "mind_bending": 70,
-                "thriller": 82,
-                "horror": 83,
-                "fantasy": 89,
-                "historical": 5
-            }
-        },
-        {
-            "id": 79,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S5",
-            "name": "The Marvelous Mrs. Maisel S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Florence Pugh",
-                "Rami Malek",
-                "Pedro Pascal"
-            ],
-            "description": "The Marvelous Mrs. Maisel S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3913,
-            "genre": "Sci-Fi",
-            "imdb_rating": 9.0,
-            "attributes": {
-                "drama": 52,
-                "romance": 69,
-                "action": 49,
-                "comedy": 57,
-                "science": 62,
-                "mind_bending": 26,
-                "thriller": 89,
-                "horror": 56,
-                "fantasy": 45,
-                "historical": 70
-            }
-        },
-        {
-            "id": 80,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S2",
-            "name": "Reacher S2",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Rami Malek",
-                "Anya Taylor-Joy",
-                "Pedro Pascal"
-            ],
-            "description": "Reacher S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4715,
-            "genre": "Sci-Fi",
-            "imdb_rating": 9.5,
-            "attributes": {
-                "drama": 17,
-                "romance": 9,
-                "action": 25,
-                "comedy": 95,
-                "science": 39,
-                "mind_bending": 85,
-                "thriller": 91,
-                "horror": 16,
-                "fantasy": 92,
-                "historical": 23
-            }
-        },
-        {
-            "id": 81,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S3",
-            "name": "The Boys S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Pedro Pascal",
-                "Florence Pugh"
-            ],
-            "description": "The Boys S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3373,
-            "genre": "Romance",
-            "imdb_rating": 7.3,
-            "attributes": {
-                "drama": 7,
-                "romance": 45,
-                "action": 63,
-                "comedy": 20,
-                "science": 65,
-                "mind_bending": 93,
-                "thriller": 87,
-                "horror": 44,
-                "fantasy": 61,
-                "historical": 64
-            }
-        },
-        {
-            "id": 82,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S5",
-            "name": "Jack Ryan S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Millie Bobby Brown",
-                "Pedro Pascal",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6707,
-            "genre": "Comedy",
-            "imdb_rating": 6.8,
-            "attributes": {
-                "drama": 21,
-                "romance": 28,
-                "action": 72,
-                "comedy": 74,
-                "science": 92,
-                "mind_bending": 21,
-                "thriller": 29,
-                "horror": 30,
-                "fantasy": 5,
-                "historical": 32
-            }
-        },
-        {
-            "id": 83,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S4",
-            "name": "Fleabag S4",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Tom Holland",
-                "Florence Pugh",
-                "Pedro Pascal"
-            ],
-            "description": "Fleabag S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3573,
-            "genre": "Horror",
-            "imdb_rating": 7.1,
-            "attributes": {
-                "drama": 14,
-                "romance": 70,
-                "action": 82,
-                "comedy": 68,
-                "science": 42,
-                "mind_bending": 64,
-                "thriller": 32,
-                "horror": 44,
-                "fantasy": 49,
-                "historical": 46
-            }
-        },
-        {
-            "id": 84,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S2",
-            "name": "The Marvelous Mrs. Maisel S2",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Rami Malek",
-                "Pedro Pascal",
-                "Florence Pugh"
-            ],
-            "description": "The Marvelous Mrs. Maisel S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6737,
-            "genre": "Fantasy",
-            "imdb_rating": 6.3,
-            "attributes": {
-                "drama": 59,
-                "romance": 87,
-                "action": 6,
-                "comedy": 96,
-                "science": 11,
-                "mind_bending": 81,
-                "thriller": 73,
-                "horror": 11,
-                "fantasy": 83,
-                "historical": 0
-            }
-        },
-        {
-            "id": 85,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S1",
-            "name": "Reacher S1",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Tom Holland",
-                "Rami Malek",
-                "Jared Harris"
-            ],
-            "description": "Reacher S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3254,
-            "genre": "Action",
-            "imdb_rating": 7.5,
-            "attributes": {
-                "drama": 92,
-                "romance": 51,
-                "action": 32,
-                "comedy": 86,
-                "science": 21,
-                "mind_bending": 4,
-                "thriller": 48,
-                "horror": 4,
-                "fantasy": 76,
-                "historical": 4
-            }
-        },
-        {
-            "id": 86,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S3",
-            "name": "The Boys S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Millie Bobby Brown",
-                "Anya Taylor-Joy",
-                "Jared Harris"
-            ],
-            "description": "The Boys S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6087,
-            "genre": "Documentary",
-            "imdb_rating": 7.2,
-            "attributes": {
-                "drama": 67,
-                "romance": 63,
-                "action": 62,
-                "comedy": 67,
-                "science": 5,
-                "mind_bending": 86,
-                "thriller": 46,
-                "horror": 8,
-                "fantasy": 84,
-                "historical": 86
-            }
-        },
-        {
-            "id": 87,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S2",
-            "name": "Jack Ryan S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Rami Malek",
-                "Pedro Pascal",
-                "Anya Taylor-Joy"
-            ],
-            "description": "Jack Ryan S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5287,
-            "genre": "Horror",
-            "imdb_rating": 8.9,
-            "attributes": {
-                "drama": 95,
-                "romance": 17,
-                "action": 86,
-                "comedy": 34,
-                "science": 84,
-                "mind_bending": 39,
-                "thriller": 97,
-                "horror": 91,
-                "fantasy": 83,
-                "historical": 85
-            }
-        },
-        {
-            "id": 88,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S1",
-            "name": "Fleabag S1",
-            "director": "Quentin Tarantino",
-            "cast": [
-                "Millie Bobby Brown",
-                "Florence Pugh",
-                "Pedro Pascal"
-            ],
-            "description": "Fleabag S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2002,
-            "genre": "Drama",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 1,
-                "romance": 72,
-                "action": 36,
-                "comedy": 18,
-                "science": 8,
-                "mind_bending": 17,
-                "thriller": 64,
-                "horror": 100,
-                "fantasy": 64,
-                "historical": 23
-            }
-        },
-        {
-            "id": 89,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S1",
-            "name": "The Marvelous Mrs. Maisel S1",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Rami Malek",
-                "Pedro Pascal"
-            ],
-            "description": "The Marvelous Mrs. Maisel S1 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 4877,
-            "genre": "Thriller",
-            "imdb_rating": 7.8,
-            "attributes": {
-                "drama": 1,
-                "romance": 49,
-                "action": 14,
-                "comedy": 52,
-                "science": 99,
-                "mind_bending": 63,
-                "thriller": 30,
-                "horror": 2,
-                "fantasy": 52,
-                "historical": 69
-            }
-        },
-        {
-            "id": 90,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S3",
-            "name": "Reacher S3",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Zendaya",
-                "Jared Harris",
-                "Pedro Pascal"
-            ],
-            "description": "Reacher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6457,
-            "genre": "Horror",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 44,
-                "romance": 93,
-                "action": 9,
-                "comedy": 3,
-                "science": 13,
-                "mind_bending": 12,
-                "thriller": 18,
-                "horror": 53,
-                "fantasy": 25,
-                "historical": 58
-            }
-        },
-        {
-            "id": 91,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S3",
-            "name": "The Boys S3",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Jared Harris",
-                "Tom Holland",
-                "Rami Malek"
-            ],
-            "description": "The Boys S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 3639,
-            "genre": "Historical",
-            "imdb_rating": 6.4,
-            "attributes": {
-                "drama": 92,
-                "romance": 65,
-                "action": 70,
-                "comedy": 96,
-                "science": 98,
-                "mind_bending": 2,
-                "thriller": 49,
-                "horror": 24,
-                "fantasy": 29,
-                "historical": 0
-            }
-        },
-        {
-            "id": 92,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S3",
-            "name": "Jack Ryan S3",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Tom Holland",
-                "Jared Harris",
-                "Rami Malek"
-            ],
-            "description": "Jack Ryan S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 7024,
-            "genre": "Romance",
-            "imdb_rating": 6.7,
-            "attributes": {
-                "drama": 9,
-                "romance": 80,
-                "action": 54,
-                "comedy": 92,
-                "science": 35,
-                "mind_bending": 77,
-                "thriller": 12,
-                "horror": 23,
-                "fantasy": 8,
-                "historical": 45
-            }
-        },
-        {
-            "id": 93,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S5",
-            "name": "Fleabag S5",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Florence Pugh",
-                "Pedro Pascal",
-                "Anya Taylor-Joy"
-            ],
-            "description": "Fleabag S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2252,
-            "genre": "Comedy",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 71,
-                "romance": 97,
-                "action": 92,
-                "comedy": 76,
-                "science": 74,
-                "mind_bending": 4,
-                "thriller": 40,
-                "horror": 40,
-                "fantasy": 11,
-                "historical": 50
-            }
-        },
-        {
-            "id": 94,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S3",
-            "name": "The Marvelous Mrs. Maisel S3",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Pedro Pascal",
-                "Jared Harris",
-                "Zendaya"
-            ],
-            "description": "The Marvelous Mrs. Maisel S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6352,
-            "genre": "Sci-Fi",
-            "imdb_rating": 9.4,
-            "attributes": {
-                "drama": 28,
-                "romance": 81,
-                "action": 83,
-                "comedy": 65,
-                "science": 60,
-                "mind_bending": 83,
-                "thriller": 57,
-                "horror": 2,
-                "fantasy": 10,
-                "historical": 85
-            }
-        },
-        {
-            "id": 95,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S3",
-            "name": "Reacher S3",
-            "director": "Steven Spielberg",
-            "cast": [
-                "Florence Pugh",
-                "Millie Bobby Brown",
-                "Pedro Pascal"
-            ],
-            "description": "Reacher S3 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6619,
-            "genre": "Action",
-            "imdb_rating": 8.5,
-            "attributes": {
-                "drama": 9,
-                "romance": 40,
-                "action": 66,
-                "comedy": 49,
-                "science": 89,
-                "mind_bending": 26,
-                "thriller": 52,
-                "horror": 37,
-                "fantasy": 32,
-                "historical": 3
-            }
-        },
-        {
-            "id": 96,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Boys+S2",
-            "name": "The Boys S2",
-            "director": "Greta Gerwig",
-            "cast": [
-                "Rami Malek",
-                "Florence Pugh",
-                "Millie Bobby Brown"
-            ],
-            "description": "The Boys S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2785,
-            "genre": "Documentary",
-            "imdb_rating": 7.1,
-            "attributes": {
-                "drama": 100,
-                "romance": 66,
-                "action": 12,
-                "comedy": 60,
-                "science": 93,
-                "mind_bending": 72,
-                "thriller": 33,
-                "horror": 21,
-                "fantasy": 72,
-                "historical": 49
-            }
-        },
-        {
-            "id": 97,
-            "reference_image": "https://via.placeholder.com/300x450?text=Jack+Ryan+S4",
-            "name": "Jack Ryan S4",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Anya Taylor-Joy",
-                "Pedro Pascal",
-                "Florence Pugh"
-            ],
-            "description": "Jack Ryan S4 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 1932,
-            "genre": "Romance",
-            "imdb_rating": 6.1,
-            "attributes": {
-                "drama": 54,
-                "romance": 35,
-                "action": 55,
-                "comedy": 25,
-                "science": 12,
-                "mind_bending": 72,
-                "thriller": 99,
-                "horror": 10,
-                "fantasy": 86,
-                "historical": 40
-            }
-        },
-        {
-            "id": 98,
-            "reference_image": "https://via.placeholder.com/300x450?text=Fleabag+S2",
-            "name": "Fleabag S2",
-            "director": "Christopher Nolan",
-            "cast": [
-                "Tom Holland",
-                "Anya Taylor-Joy",
-                "Zendaya"
-            ],
-            "description": "Fleabag S2 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 2719,
-            "genre": "Action",
-            "imdb_rating": 7.4,
-            "attributes": {
-                "drama": 28,
-                "romance": 74,
-                "action": 0,
-                "comedy": 40,
-                "science": 41,
-                "mind_bending": 3,
-                "thriller": 25,
-                "horror": 59,
-                "fantasy": 26,
-                "historical": 47
-            }
-        },
-        {
-            "id": 99,
-            "reference_image": "https://via.placeholder.com/300x450?text=The+Marvelous+Mrs.+Maisel+S5",
-            "name": "The Marvelous Mrs. Maisel S5",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Pedro Pascal",
-                "Millie Bobby Brown",
-                "Tom Holland"
-            ],
-            "description": "The Marvelous Mrs. Maisel S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 5890,
-            "genre": "Documentary",
-            "imdb_rating": 8.3,
-            "attributes": {
-                "drama": 6,
-                "romance": 65,
-                "action": 53,
-                "comedy": 82,
-                "science": 67,
-                "mind_bending": 95,
-                "thriller": 13,
-                "horror": 78,
-                "fantasy": 24,
-                "historical": 96
-            }
-        },
-        {
-            "id": 100,
-            "reference_image": "https://via.placeholder.com/300x450?text=Reacher+S5",
-            "name": "Reacher S5",
-            "director": "Ava DuVernay",
-            "cast": [
-                "Rami Malek",
-                "Jared Harris",
-                "Tom Holland"
-            ],
-            "description": "Reacher S5 is a gripping series that explores various themes with a unique narrative style.",
-            "length_in_seconds": 6600,
-            "genre": "Thriller",
-            "imdb_rating": 8.6,
-            "attributes": {
-                "drama": 71,
-                "romance": 23,
-                "action": 70,
-                "comedy": 99,
-                "science": 72,
-                "mind_bending": 26,
-                "thriller": 71,
-                "horror": 61,
-                "fantasy": 75,
-                "historical": 1
-            }
+                "drama": 37.4,
+                "romance": 54.4,
+                "action": 37.4,
+                "comedy": 54.4,
+                "science": 37.4,
+                "mind_bending": 54.4,
+                "thriller": 54.4,
+                "horror": 54.4,
+                "fantasy": 54.4,
+                "historical": 54.4
+            },
+            "seasons": [
+                {
+                    "season": "S1",
+                    "description": "The Marvelous Mrs. Maisel S1 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 4877,
+                    "imdb_rating": 7.8
+                },
+                {
+                    "season": "S2",
+                    "description": "The Marvelous Mrs. Maisel S2 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 6737,
+                    "imdb_rating": 6.3
+                },
+                {
+                    "season": "S3",
+                    "description": "The Marvelous Mrs. Maisel S3 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2277,
+                    "imdb_rating": 7.4
+                },
+                {
+                    "season": "S4",
+                    "description": "The Marvelous Mrs. Maisel S4 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 2096,
+                    "imdb_rating": 8.0
+                },
+                {
+                    "season": "S5",
+                    "description": "The Marvelous Mrs. Maisel S5 is a gripping series that explores various themes with a unique narrative style.",
+                    "length_in_seconds": 5559,
+                    "imdb_rating": 9.2
+                }
+            ]
         }
     ]
 }
