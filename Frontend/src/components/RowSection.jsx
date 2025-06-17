@@ -1,0 +1,31 @@
+import React from "react";
+
+const RowSection = ({ title, items }) => {
+  return (
+    <div className="space-y-3 ml-5">
+      <h2 className="text-2xl font-semibold">{title}</h2>
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="min-w-[150px] bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+          >
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-2">
+              <h3 className="text-sm font-semibold truncate">{item.title}</h3>
+              {item.rating && (
+                <p className="text-xs text-yellow-400">IMDb: {item.rating}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default RowSection;
