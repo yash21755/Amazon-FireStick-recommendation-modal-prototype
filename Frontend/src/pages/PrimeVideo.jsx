@@ -3,6 +3,7 @@ import AdBanner from "../components/AdBanner";
 import RowSection from "../components/RowSection";
 import Papa from "papaparse";
 import csvFile from "../data/imdb_database.csv?url"; // Vite handles ?url import
+import Navbar from "../components/PrimeNavBar.jsx";
 
 const PrimeVideo = () => {
   const [movies, setMovies] = useState([]);
@@ -41,13 +42,16 @@ const mapped = raw
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 text-white space-y-10 pb-10">
-      <AdBanner />
-      <RowSection title="Trending Now" items={movies.slice(0, 10)} />
-      <RowSection title="New Releases" items={movies.slice(10, 20)} />
-      <RowSection title="Because You Watched 'The Boys'" items={movies.slice(20, 30)} />
-      <RowSection title="Top IMDb Rated" items={[...movies].sort((a, b) => b.rating - a.rating).slice(0, 10)} />
-    </div>
+    <>
+      <Navbar />
+      <div className="w-full min-h-screen bg-gray-900 text-white pb-10">
+        <AdBanner />
+        <RowSection title="Trending Now" items={movies.slice(0, 10)} />
+        <RowSection title="New Releases" items={movies.slice(10, 20)} />
+        <RowSection title="Because You Watched 'The Boys'" items={movies.slice(20, 30)} />
+        <RowSection title="Top IMDb Rated" items={[...movies].sort((a, b) => b.rating - a.rating).slice(0, 10)} />
+      </div>
+    </>
   );
 };
 
