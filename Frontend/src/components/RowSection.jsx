@@ -1,6 +1,6 @@
 import React from "react";
 
-const RowSection = ({ title, items }) => {
+const RowSection = ({ title, items, onItemClick }) => {
   return (
     <div className="space-y-3 ml-5">
       <h2 className="text-2xl font-semibold">{title}</h2>
@@ -8,7 +8,8 @@ const RowSection = ({ title, items }) => {
         {items.map((item, index) => (
           <div
             key={item.id || `${item.title}-${index}`}
-            className="min-w-[220px] bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+            className="min-w-[220px] bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+            onClick={() => onItemClick && onItemClick(item)}
           >
             <img
               src={item.img}

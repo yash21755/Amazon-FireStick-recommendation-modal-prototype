@@ -14,6 +14,8 @@ import YouTube from "./pages/YouTube";
 import YouTubeMusic from "./pages/YouTubeMusic";
 import Profile from "./pages/Profile";
 import SleepTime from "./components/SleepTime";
+import AllMovies from "./pages/AllMovies";
+import AllSeries from "./pages/AllSeries";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -56,6 +58,8 @@ const App = () => {
             <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
             <Route path="/netflix" element={<Netflix />} />
             <Route path="/prime-video" element={<PrimeVideo />} />
+            <Route path="/prime-video/movies" element={<AllMovies />} />
+            <Route path="/prime-video/series" element={<AllSeries />} />
             <Route path="/disney" element={<Disney />} />
             <Route path="/hulu" element={<Hulu />} />
             <Route path="/youtube" element={<YouTube />} />
