@@ -44,7 +44,7 @@ const mapped = raw
   return (
     <>
       <Navbar />
-      <div className="w-full min-h-screen bg-gray-900 text-white pb-10">
+      <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col gap-5 pb-10">
         <AdBanner />
         <RowSection title="Trending Now" items={movies.slice(0, 10)} />
         <RowSection title="New Releases" items={movies.slice(10, 20)} />

@@ -10,7 +10,7 @@ const Navbar = () => {
         <span className="cursor-pointer hover:text-white">Sports</span>
         <span className="cursor-pointer hover:text-white">Live</span>
         <span className="mx-4 border-l border-white h-5" />
-        <span className="cursor-pointer hover:text-white">Subscriptions</span>
+        <span className="cursor-pointer hover:text-white">Subscription</span>
         <span className="cursor-pointer hover:text-white">Profile</span>
         <FaSearch className="cursor-pointer hover:text-white" />
       </div>
