@@ -27,7 +27,7 @@ const BottomSection = ({ darkMode }) => {
     <div className={`w-full px-8 py-4 flex flex-col gap-1 transition-colors duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-200 text-gray-900"}`}>
       {/* Navbar for apps/games */}
       {!isFullScreen && (
-        <div className="flex items-center justify-between px-12 py-2 border-b border-gray-700 bg-gray-800">
+        <div className={`flex items-center justify-between px-12 py-2 border-black ${darkMode ? "bg-gray-800" :"bg-blue-500"}`}>
           {/* Left: Tabs */}
           <div className="flex space-x-6 text-m font-medium">
             <button

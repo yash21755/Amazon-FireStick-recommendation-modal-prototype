@@ -90,7 +90,7 @@ const SideBarMenu = ({ darkMode, toggleTheme, onOpenSleep }) => {
   return (
     <div
       className={`h-screen flex flex-col justify-between transition-all duration-300 ${
-        darkMode ? "bg-[#1e293b] text-white" : "bg-gray-400 text-gray-900"
+        darkMode ? "bg-[#1e293b] text-gray-300" : "bg-blue-600 text-gray-200"
       } ${expanded ? "w-1/6 min-w-[200px]" : "w-[50px]"}`}
     >
       <div>

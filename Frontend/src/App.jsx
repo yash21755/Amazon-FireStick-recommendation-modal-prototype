@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import SleepTime from "./components/SleepTime";
 import AllMovies from "./pages/AllMovies";
 import AllSeries from "./pages/AllSeries";
+import StatisticsPage from "./components/Statistics.jsx";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -64,6 +65,7 @@ const App = () => {
             <Route path="/hulu" element={<Hulu />} />
             <Route path="/youtube" element={<YouTube />} />
             <Route path="/youtube-music" element={<YouTubeMusic />} />
+            <Route path="/sleep-timer" element={<SleepTime />} />
           </Routes>
 
           {showSleep && (
