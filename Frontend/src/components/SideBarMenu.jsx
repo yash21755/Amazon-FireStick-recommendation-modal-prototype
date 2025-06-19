@@ -122,7 +122,7 @@ const SideBarMenu = ({ darkMode, toggleTheme, onOpenSleep }) => {
         </div>
       </div>
 
-      <div className="p-4 flex justify-center">
+      <div className="pb-10 flex justify-center">
         <VoiceAssistant darkMode={darkMode} toggleTheme={toggleTheme} />
       </div>
     </div>
