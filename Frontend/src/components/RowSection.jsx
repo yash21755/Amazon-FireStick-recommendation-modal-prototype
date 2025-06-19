@@ -15,6 +15,10 @@ const RowSection = ({ title, items, onItemClick }) => {
               src={item.img}
               alt={item.title}
               className="w-full h-80 object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/images/alt_poster.png";
+              }}
             />
             <div className="p-2">
               <h3 className="text-sm font-semibold truncate">{item.title}</h3>

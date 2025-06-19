@@ -75,7 +75,12 @@ const AllMovies = () => {
                 src={movie.img}
                 alt={movie.title}
                 className="w-full h-80 object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/alt_poster.png";
+                }}
               />
+
               <div className="p-3">
                 <div className="font-semibold text-lg truncate">{movie.title}</div>
                 <div className="text-yellow-400 text-sm">

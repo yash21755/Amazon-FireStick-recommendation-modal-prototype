@@ -61,11 +61,16 @@ const isSeries = "Episodes" in item || "Type" in item;
 
         {/* Poster */}
         <div className="md:w-2/5 w-full flex items-center justify-center bg-black p-4">
-          <img
-            src={poster}
-            alt={item.title}
-            className="max-h-[500px] w-auto object-contain rounded-md shadow-md"
-          />
+<img
+  src={item.img}
+  alt={item.title}
+className="max-h-[500px] w-auto object-contain rounded-md shadow-md"
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = "/images/alt_poster.png";
+  }}
+/>
+            
         </div>
       </div>
     </div>

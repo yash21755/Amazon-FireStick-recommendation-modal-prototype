@@ -60,7 +60,6 @@ const AllSeries = () => {
         <>
             <Navbar onSearch={setSearch} />
             <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col gap-5 pb-10 pt-24">
-                <h2 className="text-3xl font-bold mb-6 px-12">All Series</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 px-12">
                     {filtered.map((item) => (
                         <div
@@ -72,6 +71,10 @@ const AllSeries = () => {
                                 src={item.img}
                                 alt={item.title}
                                 className="w-full h-80 object-cover"
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = "/images/alt_poster.png";
+                                }}
                             />
                             <div className="p-3">
                                 <div className="font-semibold text-lg truncate">{item.title}</div>
