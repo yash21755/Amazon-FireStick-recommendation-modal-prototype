@@ -4,7 +4,7 @@ const AdBanner = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const slide = {
-    image: "/images/lotrseries.webp",
+    image: "/images/lotrseries.jpg",
     title: "The Lord of the Rings: The Rings of Power",
     trending: "#1 Trending",
     rating: "7.1 IMDb",
