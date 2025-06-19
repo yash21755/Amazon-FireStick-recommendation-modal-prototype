@@ -31,7 +31,7 @@ const AllMovies = () => {
             Certificate: row.Certificate,
             Runtime: row.Runtime,
             Genre: row.Genre,
-            IMDB_Rating: row.IMDB_Rating,
+            rating: parseFloat(row.IMDB_Rating),
             Meta_score: row.Meta_score,
             Director: row.Director,
             Star1: row.Star1,
@@ -64,7 +64,6 @@ const AllMovies = () => {
     <>
       <Navbar onSearch={setSearch} />
       <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col gap-5 pb-10 pt-24 px-12">
-        <h2 className="text-3xl font-bold mb-6">All Movies</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {filtered.map((movie) => (
             <div

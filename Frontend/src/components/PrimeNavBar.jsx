@@ -26,32 +26,37 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-transparent text-white px-48 py-3 shadow-md flex items-center font-serif justify-between z-50 backdrop-blur">
-      <div className="flex items-center space-x-6 text-lg tracking-wider gap-12">
-        <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video")}>Home</span>
-        <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video/movies")}>Movies</span>
-        <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video/series")}>TV Shows</span>
-        <span className="cursor-pointer hover:text-white">Sports</span>
-        <span className="cursor-pointer hover:text-white">Live</span>
-        <span className="mx-4 border-l border-white h-5" />
-        <span className="cursor-pointer hover:text-white">Subscription</span>
-        <span className="cursor-pointer hover:text-white">Profile</span>
-        <div className="relative">
-          <FaSearch
-            className="cursor-pointer hover:text-white"
-            onClick={handleSearchIconClick}
-          />
-          {showSearch && (
-            <input
-              ref={inputRef}
-              type="text"
-              value={search}
-              onChange={handleSearchChange}
-              placeholder="Search..."
-              className="absolute right-0 mt-2 px-3 py-1 rounded bg-gray-800 text-white border border-gray-700 w-56 z-50"
-              style={{ minWidth: "180px" }}
+    <nav className="fixed top-0 w-full bg-transparent text-gray-300 px-5 shadow-md flex justify-between z-50 backdrop-blur">
+      <div className="flex-shrink-0">
+        <img src="./images/primevid.png" alt="" className="h-10 w-auto"/>
+      </div>
+      <div className="flex-1 flex justify-center">
+        <div className="flex items-center text-m tracking-wider gap-12">
+          <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video")}>Home</span>
+          <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video/movies")}>Movies</span>
+          <span className="cursor-pointer hover:text-white" onClick={() => navigate("/prime-video/series")}>TV Shows</span>
+          <span className="cursor-pointer hover:text-white">Sports</span>
+          <span className="cursor-pointer hover:text-white">Live</span>
+          <span className="border-l border-gray-300 h-5" />
+          <span className="cursor-pointer hover:text-white">Subscription</span>
+          <span className="cursor-pointer hover:text-white">Profile</span>
+          <div className="relative flex items-center" style={{ minWidth: "40px" }}>
+            <FaSearch
+              className="cursor-pointer hover:text-white"
+              onClick={handleSearchIconClick}
             />
-          )}
+            {showSearch && (
+              <input
+                ref={inputRef}
+                type="text"
+                value={search}
+                onChange={handleSearchChange}
+                placeholder="Search..."
+                className="ml-2 px-3 rounded-full bg-transparent text-white border border-gray-300 w-56 z-50 transition-all duration-200"
+                style={{ minWidth: "180px", position: "static" }}
+              />
+            )}
+          </div>
         </div>
       </div>
     </nav>

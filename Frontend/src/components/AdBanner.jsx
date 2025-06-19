@@ -44,9 +44,14 @@ const AdBanner = () => {
           >
             {slide.description}
           </p>
-          <button className="mt-6 px-6 py-2 bg-white hover:bg-blue-800 hover:text-white rounded-lg text-blue-950 font-semibold transition shadow">
+          <div className="flex flex-col w-40">
+          <button className="mt-6 px-6 py-2 bg-white hover:bg-blue-800 hover:text-gray-200 rounded-lg text-blue-950 font-semibold transition shadow">
             Watch Now
           </button>
+          <button className="mt-6 px-6 py-2 bg-transparent border-[2px] border-white hover:bg-white hover:text-blue-950 rounded-lg text-white font-semibold transition shadow">
+            More Details
+          </button>
+          </div>
         </div>
       </div>
     </div>

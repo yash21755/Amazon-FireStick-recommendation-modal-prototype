@@ -4,7 +4,7 @@ import { FaTimes } from "react-icons/fa";
 const MediaModalDetails = ({ item, onClose }) => {
   if (!item) return null;
 
-  const isSeries = !item.description && !item.Director; // heuristic for series
+const isSeries = "Episodes" in item || "Type" in item;
 
   // Use full-quality image for modal
   const poster =
@@ -12,11 +12,11 @@ const MediaModalDetails = ({ item, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex justify-center items-center px-4">
-      <div className="relative bg-gray-900 text-white rounded-lg shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-hidden">
+      <div className="relative bg-gray-900 text-white rounded-lg shadow-2xl w-full max-w-4xl flex flex-col md:flex-row overflow-hidden">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white hover:text-red-500 text-xl z-10"
+          className="absolute top-4 right-4 bg-black text-white hover:text-red-500 text-xl z-10"
         >
           <FaTimes />
         </button>
@@ -28,14 +28,14 @@ const MediaModalDetails = ({ item, onClose }) => {
           <p className="text-gray-300 text-sm">{item.description}</p>
 
           {isSeries ? (
-            <div className="grid grid-cols-2 gap-2 text-sm mt-4">
+            <div className="grid grid-cols-1 gap-2 text-sm mt-4">
               {item.Year && <p><strong>Year:</strong> {item.Year}</p>}
               {item.Episodes && <p><strong>Episodes:</strong> {item.Episodes}</p>}
               {item.Type && <p><strong>Type:</strong> {item.Type}</p>}
               {item.rating && <p><strong>Rating:</strong> ⭐ {item.rating}</p>}
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-2 text-sm mt-4">
+            <div className="grid grid-cols-1 gap-2 text-sm mt-4">
               {item.Released_Year && <p><strong>Year:</strong> {item.Released_Year}</p>}
               {item.Certificate && <p><strong>Certificate:</strong> {item.Certificate}</p>}
               {item.Runtime && <p><strong>Runtime:</strong> {item.Runtime}</p>}
