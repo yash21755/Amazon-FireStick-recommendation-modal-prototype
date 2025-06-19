@@ -4,7 +4,7 @@ import { FaTimes } from "react-icons/fa";
 const MediaModalDetails = ({ item, onClose }) => {
   if (!item) return null;
 
-const isSeries = "Episodes" in item || "Type" in item;
+  const isSeries = "Episodes" in item || "Type" in item;
 
   // Use full-quality image for modal
   const poster =
@@ -54,23 +54,56 @@ const isSeries = "Episodes" in item || "Type" in item;
             </div>
           )}
 
-          <button className="mt-6 bg-white hover:bg-blue-800 hover:text-white px-4 py-2 rounded-lg text-blue-950 font-semibold transition">
+          <button
+            className="mt-6 bg-white hover:bg-blue-800 hover:text-white px-4 py-2 rounded-lg text-blue-950 font-semibold transition"
+            onClick={() => {
+              const sleepTimeStr = localStorage.getItem("sleepTime");
+              if (!sleepTimeStr) {
+                alert("Sleep time not set. Please set it before watching.");
+                return;
+              }
+
+              const now = new Date();
+              const [sleepHours, sleepMinutes] = sleepTimeStr.split(":").map(Number);
+              const sleepTime = new Date();
+              sleepTime.setHours(sleepHours);
+              sleepTime.setMinutes(sleepMinutes);
+              sleepTime.setSeconds(0);
+
+              // Parse runtime from "142 min"
+              const runtimeStr = item.Runtime || "";
+              const match = runtimeStr.match(/(\d+)\s*min/);
+              const runtimeMin = match ? parseInt(match[1]) : 0;
+
+              const finishTime = new Date(now.getTime() + runtimeMin * 60000);
+
+              if (finishTime > sleepTime) {
+                const proceed = window.confirm(
+                  "The movie length extends farther than your sleep time. Do you still want to continue?"
+                );
+                if (!proceed) return;
+              }
+
+              alert("Starting playback...");
+            }}
+          >
             Watch Now
           </button>
+
         </div>
 
         {/* Poster */}
         <div className="md:w-2/5 w-full flex items-center justify-center bg-black p-4">
-<img
-  src={item.img}
-  alt={item.title}
-className="max-h-[500px] w-auto object-contain rounded-md shadow-md"
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.src = "/images/alt_poster.png";
-  }}
-/>
-            
+          <img
+            src={item.img}
+            alt={item.title}
+            className="max-h-[500px] w-auto object-contain rounded-md shadow-md"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/alt_poster.png";
+            }}
+          />
+
         </div>
       </div>
     </div>

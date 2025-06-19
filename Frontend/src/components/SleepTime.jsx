@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 
 const SleepTime = ({ onClose }) => {
   const modalRef = useRef(null);
+  const [showInfo, setShowInfo] = useState(false);
+  const [sleepTime, setSleepTime] = useState(localStorage.getItem("sleepTime") || "");
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
@@ -13,7 +16,14 @@ const SleepTime = ({ onClose }) => {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [onClose]);
 
-  const [showInfo, setShowInfo] = useState(false);
+  const handleSetTime = () => {
+    if (sleepTime) {
+      localStorage.setItem("sleepTime", sleepTime);
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+      onClose();
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black bg-opacity-60">
@@ -33,13 +43,15 @@ const SleepTime = ({ onClose }) => {
           <input
             type="time"
             id="sleep-time"
+            value={sleepTime}
+            onChange={(e) => setSleepTime(e.target.value)}
             className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-white"
           />
         </div>
 
         <button
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg mb-4 transition"
-          onClick={onClose}
+          onClick={handleSetTime}
         >
           Set Sleep Time
         </button>
@@ -59,6 +71,12 @@ const SleepTime = ({ onClose }) => {
             </ul>
           )}
         </div>
+
+        {showAlert && (
+          <div className="mt-4 text-green-400 text-sm text-center">
+            ✅ Sleep time set to {sleepTime}
+          </div>
+        )}
       </div>
     </div>
   );
