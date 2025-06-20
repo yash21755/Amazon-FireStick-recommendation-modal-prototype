@@ -42,6 +42,12 @@ const BottomSection = ({ darkMode }) => {
             >
               Games
             </button>
+            <button
+              
+              onClick={() => navigate("/engine-visualization") }
+            >
+              Engine
+            </button>
           </div>
 
           {/* Right: Search */}

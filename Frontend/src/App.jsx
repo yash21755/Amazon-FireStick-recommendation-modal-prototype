@@ -17,6 +17,7 @@ import SleepTime from "./components/SleepTime";
 import AllMovies from "./pages/AllMovies";
 import AllSeries from "./pages/AllSeries";
 import StatisticsPage from "./components/Statistics.jsx";
+import ModalVisualisation from "./pages/ModalVisualisation.jsx";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -55,6 +56,7 @@ const App = () => {
             <Route path="/" element={<HomePage darkMode={darkMode} toggleTheme={toggleTheme} />} />
             <Route path="/my-network" element={<MyNetworkPage darkMode={darkMode} />} />
             <Route path="/profile" element={<Profile darkMode={darkMode} />} />
+            <Route path="/engine-visualization" element={<ModalVisualisation darkMode={darkMode} />} />
             <Route path="/memory-lane" element={<MemoryLanePage darkMode={darkMode} />} />
             <Route path="/watch-along" element={<WatchAlongPage darkMode={darkMode} />} />
             <Route path="/netflix" element={<Netflix />} />

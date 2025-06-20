@@ -85,6 +85,11 @@ const HomeBanner = () => {
           </div>
         ))}
       </div>
+
+      {/* Fire TV logo at top right */}
+      <div className="absolute top-4 left-6 z-20">
+        <img src="/logos/firetvlogo.png" alt="Fire Tv" className="h-6 w-auto" />
+      </div>
     </div>
   );
 };
