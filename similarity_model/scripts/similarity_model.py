@@ -12,7 +12,11 @@ def load_dataset(database_path):
 
 def get_top_watched_movie(df):
     recent_df = df[df['watch_date'] >= datetime.now() - timedelta(days=15)].copy()
+    if recent_df.empty or 'watch_time' not in recent_df or 'total_length' not in recent_df:
+        return None
     recent_df['watch_factor'] = recent_df['watch_time'] / recent_df['total_length']
+    if recent_df['watch_factor'].isnull().all():
+        return None
     return recent_df.loc[recent_df['watch_factor'].idxmax()]
 
 def compute_similarities(reference_vector, all_vectors):
@@ -27,5 +31,7 @@ def find_top_similar(df, reference_row, top_n=10):
 def recommend_similar_movies(database_path):
     df = load_dataset(database_path)
     reference = get_top_watched_movie(df)
+    if reference is None:
+        return "", pd.DataFrame([])
     top_similar = find_top_similar(df, reference)
-    return reference['Series_Title'], top_similar[['Series_Title', 'similarity']]
+    return reference['Series_Title'], top_similar
