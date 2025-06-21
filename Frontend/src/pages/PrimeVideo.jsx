@@ -33,7 +33,6 @@ const PrimeVideo = () => {
             id: `${row.Series_Title.trim()}-${row.Released_Year.trim() || idx}`,
             title: row.Series_Title.trim(),
             img: row.Poster_Link.trim().replace(/_V1_.*\.jpg$/, "_V1_.jpg"),
-            // Poster_Link: row.Poster_Link.trim(),
             Released_Year: row.Released_Year,
             Certificate: row.Certificate,
             Runtime: row.Runtime,
@@ -50,11 +49,13 @@ const PrimeVideo = () => {
           }));
 
         const seen = new Set();
-        setMovies(mapped.filter((m) => {
-          if (seen.has(m.id)) return false;
-          seen.add(m.id);
-          return true;
-        }));
+        setMovies(
+          mapped.filter((m) => {
+            if (seen.has(m.id)) return false;
+            seen.add(m.id);
+            return true;
+          })
+        );
       },
     });
 
@@ -67,9 +68,7 @@ const PrimeVideo = () => {
         const mapped = raw
           .filter(
             (row) =>
-              row["Image-src"]?.startsWith("http") &&
-              row.Name &&
-              row.Year
+              row["Image-src"]?.startsWith("http") && row.Name && row.Year
           )
           .map((row, idx) => {
             const title = row.Name.replace(/^\d+\.\s*/, "").trim();
@@ -87,49 +86,44 @@ const PrimeVideo = () => {
           });
 
         const seen = new Set();
-        setSeries(mapped.filter((m) => {
-          if (seen.has(m.id)) return false;
-          seen.add(m.id);
-          return true;
-        }));
+        setSeries(
+          mapped.filter((m) => {
+            if (seen.has(m.id)) return false;
+            seen.add(m.id);
+            return true;
+          })
+        );
       },
     });
 
-    // 3. Fetch recommendations 
-   axios
-     .get("http://localhost:5000/api/recommend/test")
-     .then((res) => {
-       const data = res.data;
-       if (!Array.isArray(data)) {
-         console.error("Backend response is not an array:", data);
-         return;
-       }
-       // Spread in *all* fields so your modal sees Runtime, Certificate, Stars, description, etc.
-       const recs = data.map((item, idx) => ({
-           id: `${row.Series_Title.trim()}-${row.Released_Year.trim() || idx}`,
-            title: row.Series_Title.trim(),
-            img: row.Poster_Link.trim().replace(/_V1_.*\.jpg$/, "_V1_.jpg"),
-            // Poster_Link: row.Poster_Link.trim(),
-            Released_Year: row.Released_Year,
-            Certificate: row.Certificate,
-            Runtime: row.Runtime,
-            Genre: row.Genre,
-            IMDB_Rating: row.IMDB_Rating,
-            rating: parseFloat(row.IMDB_Rating),
-            Meta_score: row.Meta_score,
-            Director: row.Director,
-            Star1: row.Star1,
-            Star2: row.Star2,
-            Star3: row.Star3,
-            Star4: row.Star4,
-            description: row.Overview,
-       }));
-       setExploreRecommendations(recs);
-     })
-     .catch((err) => {
-       console.error("Failed to fetch recommendations:", err);
-     });
-    })
+    // 3. Fetch recommendations (no payload—server uses its own get_context)
+    axios
+      .get("http://localhost:5000/api/recommend/test")
+      .then((res) => {
+        const data = res.data;
+        if (!Array.isArray(data)) {
+          console.error("Backend response is not an array:", data);
+          return;
+        }
+        const recs = data.map((item, idx) => ({
+          // include all original fields for the modal
+          ...item,
+          // then override/add display-specific props:
+          id: `${item.series_title || item.name || "rec"}-${idx}`,
+          title: item.series_title || item.name || "Untitled",
+          img:
+            (item.poster_link || item["image-src"] || "")
+              .replace(/_V1_.*\.jpg$/, "_V1_.jpg") ||
+            "/images/alt_poster.png",
+          Poster_Link: item.poster_link || item["image‑src"] || "",
+          Released_Year: item.released_year || item.year || "Unknown",
+        }));
+        setExploreRecommendations(recs);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch recommendations:", err);
+      });
+  }, []);
 
   const handleItemClick = (item) => setSelectedItem(item);
   const handleWatchNow = (item) =>

@@ -115,7 +115,6 @@ def recommend_content(context, csv_file="content_data.csv", behavior_file="past_
         for sc,row in sorted(heap, key=lambda x:x[0], reverse=True):
             d = row.to_dict()
             d["score"] = sc
-            # ← sanitize: replace any NaN with None
             for k,v in d.items():
                 if isinstance(v,(float,)) and pd.isna(v):
                     d[k] = None
@@ -123,3 +122,15 @@ def recommend_content(context, csv_file="content_data.csv", behavior_file="past_
         return pd.DataFrame(out)
 
     return pd.DataFrame()
+
+if __name__ == "__main__":
+    # Example CLI test
+    import json
+    context = get_context() if callable(get_context) else {}
+    print("Sample context:", json.dumps(context, indent=2))
+    df = recommend_content(context)
+    print("\nTop recommendations:")
+    if not df.empty:
+        print(df.head(5).to_string(index=False))
+    else:
+        print("No recommendations found.")
