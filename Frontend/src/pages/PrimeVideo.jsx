@@ -6,15 +6,17 @@ import movieCSVfile from "../data/movie_database.csv?url";
 import serieCSVfile from "../data/series_database.csv?url";
 import Navbar from "../components/PrimeNavBar.jsx";
 import MediaModalDetails from "../components/MediaModalDetails.jsx";
+import axios from "axios";
 
 const PrimeVideo = () => {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [watchCounts, setWatchCounts] = useState({}); // { [id]: count }
+  const [watchCounts, setWatchCounts] = useState({});
+  const [exploreRecommendations, setExploreRecommendations] = useState([]);
 
   useEffect(() => {
-    // Parse movies
+    // 1. Fetch movies
     Papa.parse(movieCSVfile, {
       download: true,
       header: true,
@@ -31,7 +33,7 @@ const PrimeVideo = () => {
             id: `${row.Series_Title.trim()}-${row.Released_Year.trim() || idx}`,
             title: row.Series_Title.trim(),
             img: row.Poster_Link.trim().replace(/_V1_.*\.jpg$/, "_V1_.jpg"),
-            Poster_Link: row.Poster_Link.trim(),
+            // Poster_Link: row.Poster_Link.trim(),
             Released_Year: row.Released_Year,
             Certificate: row.Certificate,
             Runtime: row.Runtime,
@@ -47,18 +49,16 @@ const PrimeVideo = () => {
             description: row.Overview,
           }));
 
-        // Remove duplicates
         const seen = new Set();
-        const uniqueMovies = mapped.filter((m) => {
+        setMovies(mapped.filter((m) => {
           if (seen.has(m.id)) return false;
           seen.add(m.id);
           return true;
-        });
-        setMovies(uniqueMovies);
+        }));
       },
     });
 
-    // Parse series
+    // 2. Fetch series
     Papa.parse(serieCSVfile, {
       download: true,
       header: true,
@@ -86,36 +86,57 @@ const PrimeVideo = () => {
             };
           });
 
-        // Remove duplicates
         const seen = new Set();
-        const uniqueSeries = mapped.filter((m) => {
+        setSeries(mapped.filter((m) => {
           if (seen.has(m.id)) return false;
           seen.add(m.id);
           return true;
-        });
-
-        setSeries(uniqueSeries);
+        }));
       },
     });
-  }, []);
 
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
-  };
+    // 3. Fetch recommendations 
+   axios
+     .get("http://localhost:5000/api/recommend/test")
+     .then((res) => {
+       const data = res.data;
+       if (!Array.isArray(data)) {
+         console.error("Backend response is not an array:", data);
+         return;
+       }
+       // Spread in *all* fields so your modal sees Runtime, Certificate, Stars, description, etc.
+       const recs = data.map((item, idx) => ({
+           id: `${row.Series_Title.trim()}-${row.Released_Year.trim() || idx}`,
+            title: row.Series_Title.trim(),
+            img: row.Poster_Link.trim().replace(/_V1_.*\.jpg$/, "_V1_.jpg"),
+            // Poster_Link: row.Poster_Link.trim(),
+            Released_Year: row.Released_Year,
+            Certificate: row.Certificate,
+            Runtime: row.Runtime,
+            Genre: row.Genre,
+            IMDB_Rating: row.IMDB_Rating,
+            rating: parseFloat(row.IMDB_Rating),
+            Meta_score: row.Meta_score,
+            Director: row.Director,
+            Star1: row.Star1,
+            Star2: row.Star2,
+            Star3: row.Star3,
+            Star4: row.Star4,
+            description: row.Overview,
+       }));
+       setExploreRecommendations(recs);
+     })
+     .catch((err) => {
+       console.error("Failed to fetch recommendations:", err);
+     });
+    })
 
-  // Add handler to increment watch count
-  const handleWatchNow = (item) => {
-    setWatchCounts((prev) => ({
-      ...prev,
-      [item.id]: (prev[item.id] || 0) + 1,
-    }));
-  };
+  const handleItemClick = (item) => setSelectedItem(item);
+  const handleWatchNow = (item) =>
+    setWatchCounts((prev) => ({ ...prev, [item.id]: (prev[item.id] || 0) + 1 }));
 
-  // Sort movies by watch count for Trending Now
   const trendingMovies = [...movies]
-    .sort(
-      (a, b) => (watchCounts[b.id] || 0) - (watchCounts[a.id] || 0)
-    )
+    .sort((a, b) => (watchCounts[b.id] || 0) - (watchCounts[a.id] || 0))
     .slice(0, 10);
 
   return (
@@ -128,6 +149,11 @@ const PrimeVideo = () => {
           items={trendingMovies}
           onItemClick={handleItemClick}
           watchCounts={watchCounts}
+        />
+        <RowSection
+          title="Explore"
+          items={exploreRecommendations}
+          onItemClick={handleItemClick}
         />
         <RowSection
           title="New Releases"
@@ -147,7 +173,8 @@ const PrimeVideo = () => {
         />
         <RowSection
           title="Top IMDb Rated"
-          items={[...movies, ...series].sort((a, b) => b.rating - a.rating)
+          items={[...movies, ...series]
+            .sort((a, b) => b.rating - a.rating)
             .slice(0, 10)}
           onItemClick={handleItemClick}
         />
@@ -168,6 +195,7 @@ const PrimeVideo = () => {
           onItemClick={handleItemClick}
         />
       </div>
+
       {selectedItem && (
         <MediaModalDetails
           item={selectedItem}

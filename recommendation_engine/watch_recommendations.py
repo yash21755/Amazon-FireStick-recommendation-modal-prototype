@@ -2,147 +2,124 @@ import pandas as pd
 from fullcontext import get_context
 from collections import Counter
 from datetime import datetime, timedelta
+import heapq
 
-# 🧠 Parse frontend-format sleep time like "23:00"
 def parse_sleep_time(sleep_time_str):
     try:
         fmt = "%H:%M"
-        datetime.strptime(sleep_time_str, fmt)  # validation
+        datetime.strptime(sleep_time_str, fmt)
         return sleep_time_str
     except:
-        return "23:59"  # fallback default
+        return "23:59"
 
-# ⏰ Check if movie finishes before sleep time
-def is_within_sleep_limit(movie_length_min, current_time_str, sleep_time_str):
+def is_within_sleep_limit(length, now, sleep):
+    fmt = "%H:%M"
     try:
-        fmt = "%H:%M"
-        current = datetime.strptime(current_time_str, fmt)
-        sleep = datetime.strptime(sleep_time_str, fmt)
-
-        # Handle sleep time past midnight (e.g., "01:00" next day)
-        if sleep <= current:
-            sleep += timedelta(days=1)
-
-        movie_end = current + timedelta(minutes=movie_length_min)
-        return movie_end <= sleep
+        c = datetime.strptime(now, fmt)
+        s = datetime.strptime(sleep, fmt)
+        if s <= c: s += timedelta(days=1)
+        return c + timedelta(minutes=length) <= s
     except:
-        return True  # Allow movie if time comparison fails
+        return True
 
-# 📈 Get most frequent genres from past behaviour
-def get_top_genres(behavior_file="past_behaviour.csv", top_k=1):
+def get_top_genres(file="past_behaviour.csv", top_k=1):
     try:
-        df = pd.read_csv(behavior_file)
-        df.columns = df.columns.str.strip().str.lower()
-        if 'genre' in df.columns:
-            genres = df['genre'].dropna().astype(str).str.lower().str.split(', ')
-            genre_list = [g for sublist in genres for g in sublist]
-            top_genres = [genre for genre, _ in Counter(genre_list).most_common(top_k)]
-            return top_genres
-    except Exception as e:
-        print(f"⚠️ Could not read past behaviour: {e}")
-    return []
+        df = pd.read_csv(file)
+        df.columns = df.columns.str.lower().str.strip()
+        if "genre" not in df: return []
+        allgs = (
+            df["genre"]
+            .dropna()
+            .str.lower()
+            .str.split(", ")
+            .explode()
+        )
+        return [g for g,_ in Counter(allgs).most_common(top_k)]
+    except:
+        return []
 
-# 🎯 Main recommendation logic
 def recommend_content(context, csv_file="content_data.csv", behavior_file="past_behaviour.csv", top_n=15):
     df = pd.read_csv(csv_file)
-    df.columns = df.columns.str.strip().str.lower()
+    df.columns = df.columns.str.lower().str.strip()
+    for col in ("mood","time_of_day","weather","genre"):
+        if col in df: df[col] = df[col].astype(str).str.lower()
 
-    for col in ['mood', 'time_of_day', 'weather', 'genre']:
-        if col in df.columns:
-            df[col] = df[col].astype(str).str.lower()
-
-    preferred_genres = get_top_genres(behavior_file)
-
-    emotion = context.get('emotion', '').lower()
-    time_of_day = context.get('time_of_day', '').lower()
-    weather = context.get('weather', '').lower()
-    temperature_str = context.get('temperature', 'Unknown')
-
-    # ⏰ Times
-    sleep_raw = context.get('sleep_time', '23:59')  # default fallback
-    sleep_time = parse_sleep_time(sleep_raw)
-    current_time = context.get('current_time', '22:00')
+    pref = get_top_genres(behavior_file)
+    emo  = context.get("emotion","").lower()
+    tod  = context.get("time_of_day","").lower()
+    wea  = context.get("weather","").lower()
+    tmp  = context.get("temperature","")
+    cur  = context.get("current_time","22:00")
+    slp  = parse_sleep_time(context.get("sleep_time","23:59"))
 
     try:
-        temperature = float(temperature_str)
-        temperature_known = True
-    except ValueError:
-        temperature = None
-        temperature_known = False
+        temp_val = float(tmp)
+        temp_ok  = True
+    except:
+        temp_val = None
+        temp_ok  = False
 
-    # Filter out movies that end after sleep time
-    if 'total_length' in df.columns:
-        df['total_length'] = pd.to_numeric(df['total_length'], errors='coerce')
-        df = df[df['total_length'].apply(lambda x: is_within_sleep_limit(x, current_time, sleep_time))]
+    if "total_length" in df:
+        df["total_length"] = pd.to_numeric(df["total_length"], errors="coerce")
+        df = df[df["total_length"].apply(lambda L: is_within_sleep_limit(L,cur,slp))]
 
-    # Scoring logic
-    def calculate_score(row):
+    def score(r):
+        s = 0.0
         try:
-            imdb = float(row.get('imdb_rating', 0)) if not pd.isna(row.get('imdb_rating')) else 0
-            votes = int(row.get('no_of_votes', 0)) if not pd.isna(row.get('no_of_votes')) else 0
-            base_score = imdb * 0.35 + (votes / 100000) * 0.2  # meta_score removed
-
-            genre = str(row.get('genre', '')).lower()
-            for pref_genre in preferred_genres:
-                if pref_genre in genre:
-                    base_score += 0.8  # boost for genre match
+            imdb = float(r.get("imdb_rating",0)) if not pd.isna(r.get("imdb_rating")) else 0
+            votes= int(r.get("no_of_votes",0)) if not pd.isna(r.get("no_of_votes")) else 0
+            s = imdb*0.35 + (votes/100000)*0.2
+            for g in pref:
+                if g in str(r.get("genre","")).lower():
+                    s += 0.8
                     break
-
-            if row.get('mood') == emotion:
-                base_score += 0.6  # boost for mood match
-
-            return base_score
+            if r.get("mood","")==emo:
+                s += 0.6
         except:
-            return 0.0
+            pass
+        return s
 
-    # Filtering fallback logic
     filters = [
-        ['mood', 'time_of_day', 'weather', 'temperature'],
-        ['mood', 'time_of_day', 'weather'],
-        ['mood', 'time_of_day'],
-        ['mood'],
-        []  # final fallback
+      ["mood","time_of_day","weather","temperature"],
+      ["mood","time_of_day","weather"],
+      ["mood","time_of_day"],
+      ["mood"],
+      []
     ]
 
     for f in filters:
-        filtered = df.copy()
-        if 'mood' in f:
-            filtered = filtered[filtered['mood'] == emotion]
-        if 'time_of_day' in f:
-            filtered = filtered[filtered['time_of_day'] == time_of_day]
-        if 'weather' in f:
-            filtered = filtered[filtered['weather'] == weather]
-        if 'temperature' in f and temperature_known and 'temperature' in df.columns:
+        sub = df.copy()
+        if "mood" in f:         sub = sub[sub["mood"]==emo]
+        if "time_of_day" in f:  sub = sub[sub["time_of_day"]==tod]
+        if "weather" in f:      sub = sub[sub["weather"]==wea]
+        if "temperature" in f and temp_ok and "temperature" in sub:
             try:
-                filtered = filtered[filtered['temperature'].astype(float) <= temperature + 2]
+                sub = sub[sub["temperature"].astype(float)<=temp_val+2]
             except:
                 pass
+        if tod=="night" and "total_length" in sub:
+            short = sub[sub["total_length"]<=120]
+            if not short.empty: sub = short
 
-        # Shorter content at night
-        if time_of_day == 'night' and 'total_length' in filtered.columns:
-            short_form = filtered[filtered['total_length'] <= 120]
-            if not short_form.empty:
-                filtered = short_form
+        if sub.empty: continue
 
-        if not filtered.empty:
-            filtered['score'] = filtered.apply(calculate_score, axis=1)
-            filtered = filtered.sort_values(by='score', ascending=False)
-            return filtered.head(top_n)[['series_title', 'genre', 'imdb_rating', 'score']]
+        heap = []
+        for _,row in sub.iterrows():
+            sc = score(row)
+            if len(heap)<top_n:
+                heapq.heappush(heap,(sc,row))
+            else:
+                heapq.heappushpop(heap,(sc,row))
+
+        out = []
+        for sc,row in sorted(heap, key=lambda x:x[0], reverse=True):
+            d = row.to_dict()
+            d["score"] = sc
+            # ← sanitize: replace any NaN with None
+            for k,v in d.items():
+                if isinstance(v,(float,)) and pd.isna(v):
+                    d[k] = None
+            out.append(d)
+        return pd.DataFrame(out)
 
     return pd.DataFrame()
-
-# 🟩 MAIN Execution
-if __name__ == "__main__":
-    context = get_context()
-    print("\n📊 Final Context Used for Recommendation:")
-    for key, value in context.items():
-        print(f"{key.capitalize()}: {value}")
-
-    recommendations = recommend_content(context, csv_file="content_data_recomm.csv")
-
-    print("\n🎬 Top Recommendations:")
-    if not recommendations.empty:
-        for idx, row in recommendations.iterrows():
-            print(f"{row['series_title']} | {row['genre']} | IMDb: {row['imdb_rating']} | Score: {row['score']:.2f}")
-    else:
-        print("No recommendations found. Please adjust the filters.")
