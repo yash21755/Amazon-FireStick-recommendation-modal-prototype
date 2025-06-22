@@ -16,9 +16,10 @@ const PrimeVideo = () => {
   const [exploreRecommendations, setExploreRecommendations] = useState([]);
   const [similarRecommendations, setSimilarRecommendations] = useState([]);
   const [referenceTitle, setReferenceTitle] = useState("");
-  const [trends,setTrends]=useState([]);
+  const [trendingRecommendations, setTrendingRecommendations] = useState([]);
+
+  // Load movie CSV
   useEffect(() => {
-    // Parse movies
     Papa.parse(movieCSVfile, {
       download: true,
       header: true,
@@ -49,6 +50,8 @@ const PrimeVideo = () => {
             Star3: row.Star3,
             Star4: row.Star4,
             description: row.Overview,
+            no_of_votes: parseInt(row.No_of_Votes?.replace(/,/g, "") || "0"),
+
           }));
 
         const seen = new Set();
@@ -58,12 +61,18 @@ const PrimeVideo = () => {
           return true;
         });
         setMovies(uniqueMovies);
+        const trending = [...uniqueMovies]
+          .filter((m) => !isNaN(m.no_of_votes))
+          .sort((a, b) => b.no_of_votes - a.no_of_votes)
+          .slice(0, 10);
+
+        setTrendingRecommendations(trending);
       },
     });
+  }, []);
 
-//----------------------------------------------------------------------------------------------
-
-    // Parse series
+  // Load series CSV
+  useEffect(() => {
     Papa.parse(serieCSVfile, {
       download: true,
       header: true,
@@ -98,132 +107,138 @@ const PrimeVideo = () => {
         setSeries(uniqueSeries);
       },
     });
+  }, []);
 
-//----------------------------------------------------------------------------------------------------------------------
+  // Fetch similar recommendations after movies load
+  useEffect(() => {
+    if (movies.length === 0) return;
 
-    // Fetch becuse you watched recommendations
     axios.get("http://localhost:5001/api/similiar")
       .then((res) => {
         const { reference, similar } = res.data;
         setReferenceTitle(reference);
-
-        // Extract titles to match
-        const similarTitles = similar.map((item) =>
+        console.log("Because you watched",similar);
+        const similarTitles = similar?.map((item) =>
           item.title?.trim().toLowerCase()
-        );
+        ) || [];
 
-        // Format matching movies using the same formatting logic
         const formattedSimilar = movies
           .filter((row) =>
             similarTitles.includes(row.title.trim().toLowerCase())
           )
           .map((row, idx) => ({
             id: `${row.title}-${row.Released_Year || idx}`,
-            title: row.title,
-            img: row.img,
-            Poster_Link: row.Poster_Link,
-            Released_Year: row.Released_Year,
-            Certificate: row.Certificate,
-            Runtime: row.Runtime,
-            Genre: row.Genre,
-            IMDB_Rating: row.IMDB_Rating,
-            rating: parseFloat(row.IMDB_Rating),
-            Meta_score: row.Meta_score,
-            Director: row.Director,
-            Star1: row.Star1,
-            Star2: row.Star2,
-            Star3: row.Star3,
-            Star4: row.Star4,
-            description: row.description,
+            ...row,
           }));
 
-        setSimilarRecommendations(formattedSimilar);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch trending recommendations:", err);
-      });
-    // }, [movies]);
-
-
-//-------------------------------------------------------------------------------------------------------
-
-
-
-    // Optionally comment out this explore fetch
-    // useEffect(() => {
-    // useEffect(() => {
-    const fetchRecommendations = async () => {
-      const cached = localStorage.getItem("explore_recommendations");
-      const cachedTime = localStorage.getItem("explore_recommendations_time");
-
-      const now = Date.now();
-      const fifteenMinutes = 15 * 60 * 1000;
-
-      if (cached && cachedTime && now - parseInt(cachedTime) < fifteenMinutes) {
-        setExploreRecommendations(JSON.parse(cached));
-        return;
-      }
-
-      try {
-        const res = await axios.get("http://localhost:5000/api/recommend/test");
-        const data = res.data;
-
-        if (!Array.isArray(data)) {
-          console.error("Backend response is not an array:", data);
-          return;
+        // Fallback: if no recommendations, try with happy mood
+        if (!formattedSimilar.length) {
+          axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+            .then((happyRes) => {
+              const happyRecom = happyRes.data;
+              const happyTitles = happyRecom?.map((item) =>
+                item.title?.trim().toLowerCase()
+              ) || [];
+              const happyFormatted = movies
+                .filter((row) =>
+                  happyTitles.includes(row.title.trim().toLowerCase())
+                )
+                .map((row, idx) => ({
+                  id: `${row.title}-${row.Released_Year || idx}`,
+                  ...row,
+                }));
+              setSimilarRecommendations(happyFormatted);
+            })
+            .catch(() => setSimilarRecommendations([]));
+        } else {
+          setSimilarRecommendations(formattedSimilar);
         }
-
-        const allTitles = new Set(
-          [...movies, ...series]
-            .map((item) => item.title?.trim().toLowerCase())
-            .filter(Boolean)
-        );
-
-        const recs = data
-          .filter((item) => {
-            const title = (item.series_title || item.name || "").trim().toLowerCase();
-            return allTitles.has(title);
+      })
+      .catch(() => {
+        // fallback: try happy mood
+        axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+          .then((happyRes) => {
+            const happyRecom = happyRes.data;
+            const happyTitles = happyRecom?.map((item) =>
+              item.title?.trim().toLowerCase()
+            ) || [];
+            const happyFormatted = movies
+              .filter((row) =>
+                happyTitles.includes(row.title.trim().toLowerCase())
+              )
+              .map((row, idx) => ({
+                id: `${row.title}-${row.Released_Year || idx}`,
+                ...row,
+              }));
+            setSimilarRecommendations(happyFormatted);
           })
-          .map((item, idx) => {
-            const posterLink = item.poster_link || item["image-src"] || "";
-            const cleanPoster = posterLink
-              ? posterLink.replace(/_V1_.*\.jpg$/, "_V1_.jpg")
-              : "/images/alt_poster.png";
+          .catch(() => setSimilarRecommendations([]));
+      });
+  }, [movies]);
 
-            return {
-              ...item,
-              id: `${item.series_title || item.name || "rec"}-${idx}`,
-              title: item.series_title || item.name || "Untitled",
-              img: cleanPoster,
-              Poster_Link: posterLink,
-              Released_Year: item.released_year || item.year || "Unknown",
-              Certificate: item.certificate || "N/A",
-              Runtime: item.runtime || "N/A",
-              Genre: item.genre || "N/A",
-              IMDB_Rating: item.imdb_rating || item.rating || "N/A",
-              Meta_score: item.meta_score || "N/A",
-              Director: item.director || "Unknown",
-              Star1: item.star1 || "",
-              Star2: item.star2 || "",
-              Star3: item.star3 || "",
-              Star4: item.star4 || "",
-              description: item.description || item.overview || "No description available.",
-            };
-          });
+  // Fetch explore recommendations after movies load
+  useEffect(() => {
+    if (movies.length === 0) return;
+    axios.get("http://localhost:5000/api/recommend/test")
+      .then((res) => {
+        const Recom = res.data?.Recom || res.data;
+        const similarTitles = Recom?.map((item) =>
+          item.title?.trim().toLowerCase()
+        ) || [];
 
-        setExploreRecommendations(recs);
-        localStorage.setItem("explore_recommendations", JSON.stringify(recs));
-        localStorage.setItem("explore_recommendations_time", Date.now().toString());
-      } catch (err) {
-        console.error("Failed to fetch recommendations:", err);
-      }
-    };
+        const formattedRecom = movies
+          .filter((row) =>
+            similarTitles.includes(row.title.trim().toLowerCase())
+          )
+          .map((row, idx) => ({
+            id: `${row.title}-${row.Released_Year || idx}`,
+            ...row,
+          }));
 
-
-    fetchRecommendations();
-  }, []);
-
-
+        // Fallback: if no recommendations, try with happy mood
+        if (!formattedRecom.length) {
+          axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+            .then((happyRes) => {
+              const happyRecom = happyRes.data;
+              const happyTitles = happyRecom?.map((item) =>
+                item.title?.trim().toLowerCase()
+              ) || [];
+              const happyFormatted = movies
+                .filter((row) =>
+                  happyTitles.includes(row.title.trim().toLowerCase())
+                )
+                .map((row, idx) => ({
+                  id: `${row.title}-${row.Released_Year || idx}`,
+                  ...row,
+                }));
+              setExploreRecommendations(happyFormatted);
+            })
+            .catch(() => setExploreRecommendations([]));
+        } else {
+          setExploreRecommendations(formattedRecom);
+        }
+      })
+      .catch(() => {
+        // fallback: try happy mood
+        axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+          .then((happyRes) => {
+            const happyRecom = happyRes.data;
+            const happyTitles = happyRecom?.map((item) =>
+              item.title?.trim().toLowerCase()
+            ) || [];
+            const happyFormatted = movies
+              .filter((row) =>
+                happyTitles.includes(row.title.trim().toLowerCase())
+              )
+              .map((row, idx) => ({
+                id: `${row.title}-${row.Released_Year || idx}`,
+                ...row,
+              }));
+            setExploreRecommendations(happyFormatted);
+          })
+          .catch(() => setExploreRecommendations([]));
+      });
+  }, [movies]);
 
   const handleItemClick = (item) => setSelectedItem(item);
   const handleWatchNow = (item) =>
@@ -235,14 +250,19 @@ const PrimeVideo = () => {
       <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col gap-5 pb-10">
         <AdBanner />
         <RowSection
-          title="Trending Now"
-          items={trends}
+          title="Trending"
+          items={trendingRecommendations}
           onItemClick={handleItemClick}
-          watchCounts={watchCounts}
         />
+
         <RowSection
           title="Explore"
           items={exploreRecommendations}
+          onItemClick={handleItemClick}
+        />
+        <RowSection
+          title={`Because You Watched "${referenceTitle}"`}
+          items={similarRecommendations}
           onItemClick={handleItemClick}
         />
         <RowSection
@@ -254,11 +274,6 @@ const PrimeVideo = () => {
             }))
             .sort((a, b) => b.Parsed_Year - a.Parsed_Year)
             .slice(0, 10)}
-          onItemClick={handleItemClick}
-        />
-        <RowSection
-          title={`Because You Watched "${referenceTitle}"`}
-          items={similarRecommendations}
           onItemClick={handleItemClick}
         />
         <RowSection
