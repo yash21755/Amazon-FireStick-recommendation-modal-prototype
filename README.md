@@ -17,7 +17,7 @@ A full-stack prototype for an AI-powered, context-aware recommendation and strea
   Python microservice (Flask) for content-based similarity recommendations ("Because You Watched" feature).
 
 - **trend_checker/**  
-  (Optional) Service for trending content detection and analytics.
+  Service for trending content detection and analytics.
 
 - **data/**  
   Contains CSVs and other datasets for movies, series, user behavior, etc.
