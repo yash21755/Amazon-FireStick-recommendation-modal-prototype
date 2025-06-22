@@ -176,41 +176,70 @@ const PrimeVideo = () => {
       });
   }, [movies]);
 
-  // Fetch explore recommendations after movies load
+  // Fetch Recommendations
   useEffect(() => {
     if (movies.length === 0) return;
-    axios.get("http://localhost:5000/api/recommend/test")
+
+    axios
+      .get("http://localhost:5000/api/recommend/test")
       .then((res) => {
-        const Recom = res.data?.Recom || res.data;
-        const similarTitles = Recom?.map((item) =>
+        const data = res.data;
+        const Recom = data?.recommendations || data?.Recom || [];
+
+        // Capture context fields
+        setEmotionContext({
+          emotion: data.emotion,
+          time_of_day: data.time_of_day,
+          weather: data.weather,
+          temperature: data.temperature,
+        });
+
+        const similarTitles = Recom.map((item) =>
           item.title?.trim().toLowerCase()
-        ) || [];
+        );
 
         const formattedRecom = movies
           .filter((row) =>
             similarTitles.includes(row.title.trim().toLowerCase())
           )
-          .map((row, idx) => ({
-            id: `${row.title}-${row.Released_Year || idx}`,
-            ...row,
-          }));
+          .map((row, idx) => {
+            const matched = Recom.find(
+              (r) => r.title?.trim().toLowerCase() === row.title.trim().toLowerCase()
+            );
+            return {
+              id: `${row.title}-${row.Released_Year || idx}`,
+              ...row,
+              // score: matched?.score ?? null,
+            };
+          });
 
-        // Fallback: if no recommendations, try with happy mood
+        // Fallback to happy mood if empty
         if (!formattedRecom.length) {
-          axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+          axios
+            .post("http://localhost:5000/api/recommend", { emotion: "happy" })
             .then((happyRes) => {
-              const happyRecom = happyRes.data;
-              const happyTitles = happyRecom?.map((item) =>
+              const happyRecom = happyRes.data.recommendations || [];
+              const happyTitles = happyRecom.map((item) =>
                 item.title?.trim().toLowerCase()
-              ) || [];
+              );
+
               const happyFormatted = movies
                 .filter((row) =>
                   happyTitles.includes(row.title.trim().toLowerCase())
                 )
-                .map((row, idx) => ({
-                  id: `${row.title}-${row.Released_Year || idx}`,
-                  ...row,
-                }));
+                .map((row, idx) => {
+                  const matched = happyRecom.find(
+                    (r) =>
+                      r.title?.trim().toLowerCase() ===
+                      row.title.trim().toLowerCase()
+                  );
+                  return {
+                    id: `${row.title}-${row.Released_Year || idx}`,
+                    ...row,
+                    // score: matched?.score ?? null,
+                  };
+                });
+
               setExploreRecommendations(happyFormatted);
             })
             .catch(() => setExploreRecommendations([]));
@@ -219,21 +248,32 @@ const PrimeVideo = () => {
         }
       })
       .catch(() => {
-        // fallback: try happy mood
-        axios.post("http://localhost:5000/api/recommend", { emotion: "happy" })
+        // fallback to happy mood
+        axios
+          .post("http://localhost:5000/api/recommend", { emotion: "happy" })
           .then((happyRes) => {
-            const happyRecom = happyRes.data;
-            const happyTitles = happyRecom?.map((item) =>
+            const happyRecom = happyRes.data.recommendations || [];
+            const happyTitles = happyRecom.map((item) =>
               item.title?.trim().toLowerCase()
-            ) || [];
+            );
+
             const happyFormatted = movies
               .filter((row) =>
                 happyTitles.includes(row.title.trim().toLowerCase())
               )
-              .map((row, idx) => ({
-                id: `${row.title}-${row.Released_Year || idx}`,
-                ...row,
-              }));
+              .map((row, idx) => {
+                const matched = happyRecom.find(
+                  (r) =>
+                    r.title?.trim().toLowerCase() ===
+                    row.title.trim().toLowerCase()
+                );
+                return {
+                  id: `${row.title}-${row.Released_Year || idx}`,
+                  ...row,
+                  // score: matched?.score ?? null,
+                };
+              });
+
             setExploreRecommendations(happyFormatted);
           })
           .catch(() => setExploreRecommendations([]));
@@ -254,7 +294,6 @@ const PrimeVideo = () => {
           items={trendingRecommendations}
           onItemClick={handleItemClick}
         />
-
         <RowSection
           title="Explore"
           items={exploreRecommendations}

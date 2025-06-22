@@ -13,7 +13,15 @@ def recommend():
         context = request.get_json(force=True)
         df = recommend_content(context)
         recs = format_recommendations(df)
-        return jsonify(recs)
+        # Add context info to response
+        response = {
+            "recommendations": recs,
+            "emotion": context.get("emotion"),
+            "time_of_day": context.get("time_of_day"),
+            "weather": context.get("weather"),
+            "temperature": context.get("temperature"),
+        }
+        return jsonify(response)
     except Exception as e:
         print("Error in /api/recommend:", e)
         return jsonify({"error": str(e)}), 500
@@ -23,7 +31,15 @@ def test_recommend():
     context = get_context()
     df = recommend_content(context)
     recs = format_recommendations(df)
-    return jsonify(recs)
+    # Add context info to response
+    response = {
+        "recommendations": recs,
+        "emotion": context.get("emotion"),
+        "time_of_day": context.get("time_of_day"),
+        "weather": context.get("weather"),
+        "temperature": context.get("temperature"),
+    }
+    return jsonify(response)
 
 def format_recommendations(df):
     """
@@ -42,7 +58,8 @@ def format_recommendations(df):
         rec = {
             "id": f"{title}-{year}-{idx}",
             "title": title,
-            "description": row.get("overview") or row.get("description") or "No description available."
+            "description": row.get("overview") or row.get("description") or "No description available.",
+            "score": row.get("score", None)  # <-- Add score to output
         }
 
         recommendations.append(rec)

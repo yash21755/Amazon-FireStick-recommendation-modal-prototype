@@ -25,6 +25,12 @@ const RowSection = ({ title, items, onItemClick }) => {
               {item.rating && (
                 <p className="text-xs text-yellow-400">IMDb: {item.rating}</p>
               )}
+              {/* Show score if present */}
+              {typeof item.score !== "undefined" && item.score !== null && (
+                <p className="text-xs text-green-400">
+                  Score: {item.score.toFixed(2)}
+                </p>
+              )}
             </div>
           </div>
         ))}
